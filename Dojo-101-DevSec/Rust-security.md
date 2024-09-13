@@ -5,7 +5,10 @@ démo des fonctions de sécurité de RUST
 ## Ressources
 
 * [RUST](https://www.rust-lang.org/)
+
 * [Guide ANSSI](https://anssi-fr.github.io/rust-guide/)
+
+* [Play rust (online)](https://play.rust-lang.org/)
 
 ## Compilation
 
@@ -63,6 +66,7 @@ jobs:
 ```rust
 let x = 5; // immuable
 let mut y = 5; // la valeur pourra etre modifiée
+let z = &x; // y est une référence à x, utilise la valeurs sans en prendre la possession
 ```
 
 ## lever une exception
