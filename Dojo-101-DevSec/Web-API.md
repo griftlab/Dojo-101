@@ -2,20 +2,20 @@
 
 ## standard type
 
-SOAP
-RESTful
-GrpahQL
+* SOAP
+* RESTful
+* GrpahQL
 
 ## Data Type
 
-XML
-JSON
+* XML
+* JSON
 
 ## common content type:
 
-application/json
-application/xml 
-application/x-www-form-urlencoded 
+* application/json
+* application/xml 
+* application/x-www-form-urlencoded 
 
 ## Convention
 
@@ -28,29 +28,28 @@ application/x-www-form-urlencoded
 
 ## tools généralement utilisés pour les tests (hors sécu)
 
-Postman
-Client http du même langage de programmation
-OWASP Zap
+* Postman
+* Client http du même langage de programmation
+* OWASP Zap / Burp Suite
 
-## Doc pour la collecte d'info
+## liste sommaire de repertoires pour trouver la doc:
 
-* https://www.programmableweb.com/
-* shodan
-
-### liste de repertoires pour trouver la doc:
-
+```txt
 /docs
 /api/docs
 /documentation
 /developers/documentation
+```
 
 ### liste de sous domaines pour trouver la doc
 
+```txt
 dev.
 api.
-
+```
 ### detect graphQL
 
+```txt
 /graphql
 /v1/graphql
 /api/graphql
@@ -65,6 +64,7 @@ Attacking GraphQL   291
 /graphql/console
 /altair
 /playground
+```
 
 ### exemples GraphQL
 
@@ -118,3 +118,11 @@ Content-Type: application/json
 {\n importPaste(host: $host, port: $port, path: $path, scheme: $scheme)
 {\n result\n }\n }"}
 ```
+
+## SOAP
+
+### Merge SOAP with XSD in Visual studio:
+
+- Merge XSD in WSDL file
+- Right click on the project and select "Add Service Reference" -> "WCF" -> "enter local Path or URI"
+

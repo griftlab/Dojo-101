@@ -4,7 +4,8 @@ démo des fonctions de sécurité de RUST
 
 ## Ressources
 
-[Guide ANSSI](https://anssi-fr.github.io/rust-guide/)
+* [RUST](https://www.rust-lang.org/)
+* [Guide ANSSI](https://anssi-fr.github.io/rust-guide/)
 
 ## Compilation
 
@@ -20,7 +21,8 @@ cargo add regex
 ```
 
 Le code sera dans `main.rs`
-Les versions de dépendance sont alors spécifié dans le fichier `Cargo.toml`
+Les versions des dépendances sont alors spécifié dans le fichier `Cargo.toml`
+Pour mettre à jour des dépendances : `cargo-update`
 
 ## Variables
 

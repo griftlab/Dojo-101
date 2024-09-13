@@ -1,13 +1,47 @@
 # Développement sécurisé / DevSec basics
 
 
-## Intégration des prestations dans le Software Development LifeCycle (SDLC)
+## Intégration de la sécurité au Software Development LifeCycle (SDLC)
 
 | Exigences | Conception | Développement | Déploiement | Maintenance |
 |---|---|---|---|---|
 |Analyse de risques| Audit d'architecture | Audit de Code | Test d'intrusion | Contrôles de sécurité |
 |Modélisation de menaces| Ateliers de sensibilisations sécurité | Audit de Configuration | | Audits périodiques |
 |Expression de besoin sécurité | | | | |
+
+
+## Integration de la la sécurité aux canaux CI/CD
+
+[Chaine DevOps](https://learn.microsoft.com/fr-fr/azure/cloud-adoption-framework/ready/considerations/devops-toolchain#azure-devops-and-github-toolchain)
+
+### CI - Intégration continue
+
+* Analyse et scan de la sécurité du code source
+* Analyse et scan de dépendances
+* Tests d’intégration (unitaires, E2E)
+
+### CD - Déploiement continu
+
+* Gestion et scan des secrets
+* Test de l'application
+* Audit des permissions
+
+### Github Workflows/Actions ou pluguins pour la sécurité
+
+* DependencyCheck
+* CodeQL
+* Nuclei
+* SonardQube
+
+### tests unitaires
+
+* Test inputs utilisateurs
+* Fuzzings
+
+### tests E2E
+
+* Contournements / mauvais respect des workflows
+
 
 ## Référentiels et bonnes pratiques
 
@@ -26,16 +60,6 @@
 
 * [liste des CWE](https://cwe.mitre.org/)
 
-## Rechercher des vulns spécifiques
-
-* [cvemap](https://github.com/projectdiscovery/cvemap)
-
-* [API KEY](https://cloud.projectdiscovery.io/?ref=api_key)
-
-```powershell
-.\cvemap.exe -auth
-.\cvemap.exe -l 100
-```
 
 ## Notions de vulnérabilité
 
@@ -48,24 +72,6 @@ Menace = Cause potentielle de l’incident
 Impact = Gravité, portée de l’incident sur les échelles et critères DICT
 
 Risque = Vuln + Menace + Impact
-
-## threats modeling	helper
-
-1. What are we working on ?
-
-2. What can go wrong ?
-
-3. What are we going to do about it ?
-
-3. Did we do a good job ?
-
-* Assess Scope - What are we working on? This might be as small as a sprint, or as large as a whole system.
-
-* Identify what can go wrong - This can be as simple as a brainstorm, or as structured as using STRIDE, Kill Chains, or Attack Trees.
-
-* Identify countermeasures or manage risk - Decide what you’re going to do about each threat. That might be to implement a mitigation, or to apply the accept/transfer/eliminate approaches of risk management.
-
-* Assess your work - Did you do a good enough job for the system at hand?
 
 ## CIA Information security:
 
@@ -110,6 +116,7 @@ Risque = Vuln + Menace + Impact
 3. Procedures
 
 
+
 ## suivi des besoins sécurité
 
 1. Besoin de sécurité identifié par la sécurité
@@ -126,10 +133,41 @@ Risque = Vuln + Menace + Impact
 6. Evaluation du risque résiduel par la sécurité
 retour à 1
 
+## Rechercher des vulns spécifiques
+
+* [cvemap](https://github.com/projectdiscovery/cvemap)
+
+* [API KEY](https://cloud.projectdiscovery.io/?ref=api_key)
+
+```powershell
+.\cvemap.exe -auth
+.\cvemap.exe -l 100
+```
+
+
+## threats modeling	helper
+
+1. What are we working on ?
+
+2. What can go wrong ?
+
+3. What are we going to do about it ?
+
+3. Did we do a good job ?
+
+* Assess Scope - What are we working on? This might be as small as a sprint, or as large as a whole system.
+
+* Identify what can go wrong - This can be as simple as a brainstorm, or as structured as using STRIDE, Kill Chains, or Attack Trees.
+
+* Identify countermeasures or manage risk - Decide what you’re going to do about each threat. That might be to implement a mitigation, or to apply the accept/transfer/eliminate approaches of risk management.
+
+* Assess your work - Did you do a good enough job for the system at hand?
+
+
 
 ## exemple de référentiel : l'OWASP ASVS
 
-[owasp-asvs](https://owasp.org/www-project-application-security-verification-standard/)
+[owasp-asvs](https://owasp.org/www-project-application-security-verification-standard/) complet au format csv : 
 
 ```csv
 Section,Name,Item,Compliance,Description,L1,L2,L3,CWE,NIST

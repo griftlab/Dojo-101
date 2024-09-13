@@ -16,8 +16,12 @@ Se rendre dans ticket et faire une recherche avancée.
 
 ## tous les ticket du projet DD avec des status spécifique qui me sont attribués:
 
+```jql
 project = DD AND status in (Ouvert, "In Progress", Réouvert, "Being Analyzed", Suspendu, "To be done", "A planifier", "Fin de recette sécu", Reportée, "Attente décision Métier", "Attente Environnement Opérationnel") AND assignee in (currentUser()) 
+```
 
 ## toutes les failles de sécurité non cloturée avec le status critique
 
+```jql
 issuetype = "Faille de Sécurité" AND status != Clôturé AND priority = Critical
+```
