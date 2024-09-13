@@ -21,8 +21,42 @@ cargo add regex
 ```
 
 Le code sera dans `main.rs`
-Les versions des dépendances sont alors spécifié dans le fichier `Cargo.toml`
+Les versions des dépendances sont alors spécifié dans le fichier `Cargo.toml`, Cargo gère automatiquement le fichier `Cargo.lock`
 Pour mettre à jour des dépendances : `cargo-update`
+
+
+## Test via CI/CD
+
+### github actions
+
+exemple :
+
+```yml
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build
+      working-directory: ./quality
+      run: cargo build --verbose
+    - name: Run tests
+      working-directory: ./quality
+      run: cargo test --verbose
+```
 
 ## Variables
 

@@ -1,6 +1,17 @@
 # Développement sécurisé / DevSec basics
 
 
+## Référentiels et bonnes pratiques
+
+* [Projets OWASP](https://owasp.org/projects/)
+
+* [Guides ANSSI](https://cyber.gouv.fr)
+
+* [Chaine DevOps](https://learn.microsoft.com/fr-fr/azure/cloud-adoption-framework/ready/considerations/devops-toolchain#azure-devops-and-github-toolchain)
+
+* [OWASP ASVS](https://github.com/OWASP/ASVS)
+
+
 ## Intégration de la sécurité au Software Development LifeCycle (SDLC)
 
 | Exigences | Conception | Développement | Déploiement | Maintenance |
@@ -43,24 +54,6 @@
 * Contournements / mauvais respect des workflows
 
 
-## Référentiels et bonnes pratiques
-
-* [Projets OWASP](https://owasp.org/projects/)
-
-* [Guides ANSSI](https://cyber.gouv.fr)
-
-* [Chaine DevOps](https://learn.microsoft.com/fr-fr/azure/cloud-adoption-framework/ready/considerations/devops-toolchain#azure-devops-and-github-toolchain)
-
-
-## énumeration des vulnréabilités et mauvaise pratiques
-
-* [OWASP top 10](https://owasp.org/Top10/)
-
-* [SANS TOP 20](https://www.softwaretestinghelp.com/sans-top-20-security-vulnerabilities/)
-
-* [liste des CWE](https://cwe.mitre.org/)
-
-
 ## Notions de vulnérabilité
 
 Risque = Impact * Vraisemblance
@@ -72,6 +65,29 @@ Menace = Cause potentielle de l’incident
 Impact = Gravité, portée de l’incident sur les échelles et critères DICT
 
 Risque = Vuln + Menace + Impact
+
+
+## énumeration des vulnréabilités et mauvaise pratiques
+
+* [OWASP top 10](https://owasp.org/Top10/)
+
+* [SANS TOP 20](https://www.softwaretestinghelp.com/sans-top-20-security-vulnerabilities/)
+
+* [liste des CWE](https://cwe.mitre.org/)
+
+
+## DREAD : Evaluation d'une vulnérabilité
+
+* Damage potential : If exploited, how harmful could it be?
+
+* Reproducibility : Will attacks succeed every time, some of the time, or only rarely?
+
+* Exploitability : How hard, in terms of technical difficulty, effort, and cost, is the vulnerability to exploit? How long is the attack path?
+
+* Affected users :Will all, some, or only a few users be impacted? Can specific targets be easily attacked, or are the victims arbitrary?
+
+* Discoverability : How likely is it that attackers will find the vulnerability?
+
 
 ## CIA Information security:
 
@@ -105,6 +121,7 @@ Risque = Vuln + Menace + Impact
 
 * Paranoid	
 
+
 ## Oganisational security Documents			
 
 1. Policies	
@@ -116,7 +133,6 @@ Risque = Vuln + Menace + Impact
 3. Procedures
 
 
-
 ## suivi des besoins sécurité
 
 1. Besoin de sécurité identifié par la sécurité
@@ -126,7 +142,6 @@ Risque = Vuln + Menace + Impact
 3. Intégration au Backlog du projet
 
 4. Implémentation par le projet
-
 
 5. Recette sécurité par la sécurité
 
@@ -165,7 +180,7 @@ retour à 1
 
 
 
-## exemple de référentiel : l'OWASP ASVS
+## exemple de référentiel :
 
 [owasp-asvs](https://owasp.org/www-project-application-security-verification-standard/) complet au format csv : 
 

@@ -164,7 +164,7 @@ git push -f origin main #push vers la branche main
 git gc --aggressive --prune=all # supression des anciens fichiers
 ```
 
-## Actions
+## Actions / Workflows
 
 This workflow will build a .NET project, [more information here](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net)
 
