@@ -50,7 +50,7 @@ cargo clippy
 
 ### github actions
 
-exemple :
+exemple avec Clippy et tests :
 
 ```yml
 name: Rust
@@ -63,6 +63,7 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  RUSTFLAGS: "-Dwarnings"
 
 jobs:
   build:
@@ -71,6 +72,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Run Clippy
+      run: cargo clippy --all-targets --all-features
     - name: Build
       working-directory: ./quality
       run: cargo build --verbose

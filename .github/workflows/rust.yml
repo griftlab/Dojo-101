@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    -name: Run Clippy
+    - name: Run Clippy
       working-directory: ./quality
       run: cargo clippy --all-targets --all-features
     - name: Build
