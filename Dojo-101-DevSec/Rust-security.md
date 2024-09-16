@@ -16,6 +16,14 @@ démo des fonctions de sécurité de RUST
 rustc.exe .\Rust-security.rs
 ```
 
+## Toolchains
+
+la version stable est recommandée
+
+```powershell
+rustup toolchain list
+```
+
 ## Créer un projet avec dépendances
 
 ```powershell
@@ -27,6 +35,16 @@ Le code sera dans `main.rs`
 Les versions des dépendances sont alors spécifié dans le fichier `Cargo.toml`, Cargo gère automatiquement le fichier `Cargo.lock`
 Pour mettre à jour des dépendances : `cargo-update`
 
+
+## Test & linter
+
+[Clippy](https://github.com/rust-lang/rust-clippy)
+
+Installé par défaut, si non `rustup component add clippy` (priviliger cette commande à `cargo` pour ne pas l'avoir en dépendance)
+
+```
+cargo clippy
+```
 
 ## Test via CI/CD
 
@@ -162,5 +180,3 @@ fn concurrency() {
     println!("Result: {}", *counter.lock().unwrap());
 }
 ```
-
-### dépendances
