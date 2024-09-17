@@ -1,7 +1,3 @@
-# Éthique et cadre légal
-
-( 🇬🇧 at the end of file )
-
 ## Avis de non-responsabilité
 
 Les informations de ce projet sont partagées afin d'assurer la transparence de **prestations professionnelles** et le respect des **licences open sources**. L'utilisation de ces informations et outils reste sous l'entière responsabilité de la personne physique ou morale qui les met en oeuvre, notamment concernant le **respect du cadre légal et la maitrise des actions réalisées**.
@@ -18,18 +14,22 @@ En cas de doute, voici une liste non exhaustive de ressources 🇫🇷 :
 
 Outre les aspects juridiques présentés ci-après, il est entendu que le contenu du cours est transmis à titre informatif uniquement dans un but de sensibilisation aux risques liés à la cybersécurité. 
 
-En dehors de l’environnement de tests fourni pour la formation, toute mise en œuvre est déconseillée, même si celle-ci respecte le cadre légal. Je m’engage au respect des autres, ainsi qu’à faire preuve de sagesse, d’intégrité et d’honnêteté pendant et à l’issue de cette formation.
+En dehors de l’environnement de tests fourni pour la formation, toute mise en œuvre est déconseillée, même si celle-ci respecte le cadre légal. 
 
-### Article 323-1 al.1 du code pénal
+L'utilisateur s’engage au respect des autres, ainsi qu’à faire preuve de sagesse, d’intégrité et d’honnêteté pendant et à l’issue de cette formation.
+
+## Extrait non exhaustif du cadre légal applicable
+
+### Article 323-1 al.1 du Code pénal
 
 « Le fait d'accéder ou de se maintenir, frauduleusement, dans tout ou partie d'un système de traitement automatisé de données est puni de deux ans d'emprisonnement et de 60 000 € d'amende. » 
 
-### Article 323-1 al.2 et 3 du code pénal
+### Article 323-1 al.2 et 3 du Code pénal
 
 « Lorsqu'il en est résulté soit la suppression ou la modification de données contenues dans le système, soit une altération du fonctionnement de ce système, la peine est de trois ans d'emprisonnement et de 100 000 € d'amende. » 
 « Lorsque les infractions prévues aux deux premiers alinéas ont été commises à l'encontre d'un système de traitement automatisé de données à caractère personnel mis en œuvre par l'État, la peine est portée à cinq ans d'emprisonnement et à 150 000 € d'amende. »
 
-### Article 323-2 du code pénal 
+### Article 323-2 du Code pénal 
 
 « Le fait d'entraver ou de fausser le fonctionnement d'un système de traitement automatisé de données est puni de cinq ans d'emprisonnement et de 150 000 € d'amende. Lorsque cette infraction a été commise à l'encontre d'un système de traitement automatisé de données à sept ans d'emprisonnement et à 300 000 € d'amende. »
 
@@ -41,10 +41,6 @@ Les brouillages de fréquences autorisées causés par l’utilisation non confo
 
 En dehors de dérogations encadrées pour des services de l’État, la possession, l’utilisation, la cession à titre commercial ou gratuit, la publicité illicite de brouilleurs sont strictement interdites (article L. 33-3-1 du CPCE). Ce sont des délits soumis à une sanction pénale pouvant aller jusqu’à 6 mois de prison et 30 000 euros d’amende (L. 39-1 du CPCE).
 
+## Une dernière évidence
 
-## Disclaimer
-
-This repository, together with its tools, is provided by Taisen-Solutions on an “as is” basis. Taisen-Solutions makes no representations or warranties of any kind, express or implied, as to the operation of the information, content, materials, tools, services and/or products included on the repository. Taisen-Solution disclaims, to the full extent permissible by applicable law, all warranties, express or implied, including but not limited to, implied warranties of merchantability and fitness for a particular purpose.
-
-
-
+Ces ressources ne sont pas parfaites et n'ont pas vocation à l'être. Avec le temps et malgré les efforts des contributeurs, certaines informations peuvent devenir obsolètes ou erronées.

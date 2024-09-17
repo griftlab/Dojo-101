@@ -2,7 +2,7 @@
 
 Script de maintenance du contenu Dojo-101
 
-Dépendances et compilation du script vérifié via github Action: Oui
+Dépendances, code et compilation du script vérifié via github Action: Oui
 
 Exécution du script lors des workflows : Non (Lancement et contrôles manuels) 
 

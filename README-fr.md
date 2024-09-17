@@ -16,7 +16,7 @@ Utilisable hors-ligne à l'aide d'un simple éditeur de texte, sa raison d'être
 [![fr](https://img.shields.io/badge/Français-🇫🇷-blue.svg)](./README-FR.md)
 [![en](https://img.shields.io/badge/English-🇬🇧-red.svg)](./README.md)
 
-> ⚠️ [Avant tout usage, merci de prendre connaissance de l'avis de non-responsabilité du projet](./CODE_OF_CONDUCT.md)
+> ⚠️ [Utiliser ces ressources comporte des risques ! Avant tout usage, merci de prendre connaissance de l'avis de non-responsabilité du projet.](./CODE_OF_CONDUCT.md)
 
 
 ## 💡 Principe
