@@ -12,25 +12,25 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 [Gestes professionnels](https://github.com/Aif4thah/Dojo-101)
 [Guide ANSSI TLS: anssi-guide-recommandations_de_securite_relatives_a_tls-v1.2](https://cyber.gouv.fr/publications)
 [Guide ANSSI sur l'OS ou la solution choisie](https://cyber.gouv.fr/)
-[Markdown](https://github.com/nirae/Memento-Syntax-Markdown/blob/master/memo.md)
+[Markdown](https://www.markdownguide.org/)
 
 
 ## Contexte
 
-Notre startup a récemment commencé à travailler avec des clients internationaux. Nous avons besoin d’un moyen sécurisé pour accéder à nos ressources internes depuis l’extérieur de notre réseau. Nous comptons sur vous.
+Notre startup a récemment commencée à travailler avec des clients internationaux. Nous avons besoin d’un moyen sécurisé pour accéder à nos ressources internes depuis l’extérieur de notre réseau. Nous comptons sur vous.
 
 
 ## Modalités pédagogiques
 
-Techno au choix:
+* Techno au choix:
 
-Firewall:
-- Linux 
-- Cisco
+* Firewall:
+     - Linux 
+     - Cisco
 
-VPN (client - serveur):
-- Wiregard
-- OpenVPN
+* VPN (client - serveur):
+     - Wiregard
+     - OpenVPN
 
 LAN: 10.0.0.0/24
 WAN : 192.168.1.0/24
@@ -47,11 +47,13 @@ de la solution retenue
 
 ## Critères de performance
 
-La concision
-la clarté (du script ou de la doc .md)
-l'effort fait sur le durcissement par rapport la configuration par défaut +++
-     par exemple : interdire les suites de chiffrement obsolète.
-Scanner votre service à l'aide d'un outil tel que Nmap NSE ou vpnscan est inclure le résultat au fichier md ou en commentaire du script
+* La concision
+
+* la clarté (du script ou de la doc .md)
+
+* l'effort fait sur le durcissement par rapport la configuration par défaut, par exemple : interdire les suites de chiffrement obsolète.
+
+* Scanner votre service à l'aide d'un outil tel que Nmap NSE ou vpnscan est inclure le  résultat au fichier md ou en commentaire du script
 
 # Hardware
 

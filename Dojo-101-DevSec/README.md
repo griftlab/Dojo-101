@@ -69,9 +69,9 @@ Risque = Vuln + Menace + Impact
 
 ## énumeration des vulnréabilités et mauvaise pratiques
 
-* [OWASP top 10](https://owasp.org/Top10/)
+* [OWASP TOP10](https://owasp.org/Top10/)
 
-* [SANS TOP 20](https://www.softwaretestinghelp.com/sans-top-20-security-vulnerabilities/)
+* [SANS TOP25](https://www.sans.org/top25-software-errors/)
 
 * [liste des CWE](https://cwe.mitre.org/)
 
@@ -439,7 +439,7 @@ V13,API,13.1.4,,"Verify that authorization decisions are made at both the URI, e
 V13,API,13.1.5,,Verify that requests containing unexpected or missing content types are rejected with appropriate headers (HTTP response status 406 Unacceptable or 415 Unsupported Media Type).,,X,X,434,
 V13,API,13.2.1,,"Verify that enabled RESTful HTTP methods are a valid choice for the user or action, such as preventing normal users using DELETE or PUT on protected API or resources.",X,X,X,650,
 V13,API,13.2.2,,Verify that JSON schema validation is in place and verified before accepting input.,X,X,X,20,
-V13,API,13.2.3,,"Verify that RESTful web services that utilize cookies are protected from Cross-Site Request Forgery via the use of at least one or more of the following: triple or double submit cookie pattern (see [references](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)), CSRF nonces, or ORIGIN request header checks.",X,X,X,352,
+V13,API,13.2.3,,"Verify that RESTful web services that utilize cookies are protected from Cross-Site Request Forgery via the use of at least one or more of the following: triple or double submit cookie pattern (see [references](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)), CSRF nonces, or ORIGIN request header checks.",X,X,X,352,
 V13,API,13.2.4,,"Verify that REST services have anti-automation controls to protect against excessive calls, especially if the API is unauthenticated.",,X,X,779,
 V13,API,13.2.5,,"Verify that REST services explicitly check the incoming Content-Type to be the expected one, such as application/xml or application/JSON.",,X,X,436,
 V13,API,13.2.6,,Verify that the message headers and payload are trustworthy and not modified in transit. Requiring strong encryption for transport (TLS only) may be sufficient in many cases as it provides both confidentiality and integrity protection. Per-message digital signatures can provide additional assurance on top of the transport protections for high-security applications but bring with them additional complexity and risks to weigh against the benefits.,,X,X,345,

@@ -13,7 +13,7 @@
 
 ## tool for hackrf
 
-* [GPS-SDR-SIM](https://github.com/osqzss/gps-sdr-sim/releases/tag/v1.0)
+* [GPS-SDR-SIM](https://github.com/osqzss/gps-sdr-sim/)
 
 ## Spoofing
 
