@@ -77,11 +77,11 @@ As an example, open `DOJO-101` folder with [VSCode](https://code.visualstudio.co
 
 ## 🤝 Contributions
 
-* [Contributor guidelines](./CONTRIBUTING.md)
+* [Contributor guidelines](https://github.com/Aif4thah/Dojo-101/blob/main/CONTRIBUTING.md)
 
 ## 🚨 Security
 
-* [About project security](./SECURITY.md)
+* [About project security](https://github.com/Aif4thah/Dojo-101/blob/main/SECURITY.md)
 
 ## 🌱 Learning
 

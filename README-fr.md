@@ -78,11 +78,11 @@ Par exemple, ouvrez le répertoire `DOJO-101` avec [VSCode](https://code.visuals
 
 ## 🤝 Contributions
 
-* [Recommandations pour les contributeurs](./CONTRIBUTING.md)
+* [Recommandations pour les contributeurs](https://github.com/Aif4thah/Dojo-101/blob/main/CONTRIBUTING.md)
 
 ## 🚨 Sécurité
 
-* [À propos de la sécurité du projet](./SECURITY.md)
+* [À propos de la sécurité du projet](https://github.com/Aif4thah/Dojo-101/blob/main/SECURITY.md)
 
 ## 🌱 Apprentissage
 

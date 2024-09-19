@@ -29,7 +29,7 @@ fn main() {
     let mut files = vec![];
     let mut non_markdown_files = vec![];
 
-    for entry in WalkDir::new(parent_dir).min_depth(2).max_depth(3) {
+    for entry in WalkDir::new(parent_dir).min_depth(1).max_depth(3) {
         let entry = entry.unwrap();
         let path = entry.path();
        
