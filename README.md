@@ -77,7 +77,7 @@ As an example, open `DOJO-101` folder with [VSCode](https://code.visualstudio.co
 
 ## 🤝 Contributions
 
-* [Contributor guidelines](./CONTRIBUTING)
+* [Contributor guidelines](./CONTRIBUTING.md)
 
 ## 🚨 Security
 

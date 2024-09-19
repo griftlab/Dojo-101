@@ -78,7 +78,7 @@ Par exemple, ouvrez le répertoire `DOJO-101` avec [VSCode](https://code.visuals
 
 ## 🤝 Contributions
 
-* [Recommandations pour les contributeurs](./CONTRIBUTING)
+* [Recommandations pour les contributeurs](./CONTRIBUTING.md)
 
 ## 🚨 Sécurité
 
