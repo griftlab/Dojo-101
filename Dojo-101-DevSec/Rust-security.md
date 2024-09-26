@@ -99,7 +99,7 @@ panic!("crash and burn");
 
 ## Sécurité : Mémoire, Type, Threads
 
-Le script ci dessous 
+Démonstration des principales fonctions de sécurité :
 
 ```rust
 use std::thread;
