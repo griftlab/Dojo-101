@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="./dojo101Dark.png" alt="Dojo-101" style="width: 400px;" />
+    <img src="./images/dojo101Dark.png" alt="Dojo-101" style="width: 400px;" />
 </p>
 
 [![License: GNU GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -21,7 +21,7 @@ Utilisable hors-ligne à l'aide d'un simple éditeur de texte, sa raison d'être
 
 ## 💡 Principe
 
-![Principe](./Capitalisation.drawio.png)
+![Principe](./images/Capitalisation.drawio.png)
 
 
 ## ⚔️ Thématiques
@@ -57,13 +57,13 @@ Par exemple, ouvrez le répertoire `DOJO-101` avec [VSCode](https://code.visuals
 * Lire le contenu au format `HTML` (`ctrl`+`shift` +`V`)
 
 <p align="center">
-    <img src="./VSCode-demo.gif" alt="Dojo-101-vscodium" style="width: 800px;" />
+    <img src="./images/VSCode-demo.gif" alt="Dojo-101-vscodium" style="width: 800px;" />
 </p>
 
 ### Usage directement sur Github :
 
 <p align="center">
-    <img src="./GH-Search-demo.gif" alt="Dojo-101-vscodium" style="width: 800px;" />
+    <img src="./images/GH-Search-demo.gif" alt="Dojo-101-vscodium" style="width: 800px;" />
 </p>
 
 

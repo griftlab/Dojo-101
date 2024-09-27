@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="./dojo101Dark.png" alt="Dojo-101" style="width: 400px;" />
+    <img src="./images/dojo101Dark.png" alt="Dojo-101" style="width: 400px;" />
 </p>
 
 [![License: GNU GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -21,7 +21,7 @@ Usable offline with a simple text editor, its purpose is to freely share knowled
 
 ## 💡 Principle
 
-![Principe](./Capitalisation.drawio.png)
+![Principe](./images/Capitalisation.drawio.png)
 
 
 ## ⚔️ Themes
@@ -56,13 +56,13 @@ As an example, open `DOJO-101` folder with [VSCode](https://code.visualstudio.co
 * Read the content in `HTML` format (`ctrl`+`shift` +`V`)
 
 <p align="center">
-    <img src="./VSCode-demo.gif" alt="Dojo-101-vscodium" style="width: 800px;" />
+    <img src="./images/VSCode-demo.gif" alt="Dojo-101-vscodium" style="width: 800px;" />
 </p>
 
 ## Direct Usage on Github :
 
 <p align="center">
-    <img src="./GH-Search-demo.gif" alt="Dojo-101-vscodium" style="width: 800px;" />
+    <img src="./images/GH-Search-demo.gif" alt="Dojo-101-vscodium" style="width: 800px;" />
 </p>
 
 

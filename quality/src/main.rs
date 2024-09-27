@@ -1,7 +1,7 @@
 /*
 Script de maintenance du contenu Dojo-101
 - Dépendances, code et compilation du script vérifié via github Action: Oui
-- Exécution du script lors des workflows : Non (Lancement et contrôles manuels) 
+- Exécution du script lors des workflows : Beta.
 */
 
 use std::fs;
@@ -19,15 +19,11 @@ fn main() {
     println!("\n[*] Dojo-101 content files : {}", files.len());
     println!("\n[*] Non-markdown files: {:?}", non_markdown_files);
 
-    let oldest_files = get_oldest_files(&files, 5);
-    println!("\n[*] 5 oldest files: {:?}", oldest_files);
-
     println!("\n[*] check subdirectories...");
     check_subdirectories(&parent_dir);
 
     let urls = extract_urls(&files);
     println!("\n[*] Number of unique URLs in markdown files: {}", urls.len());
-
     println!("\n[*] check urls...");
     check_urls(&urls);
 }
@@ -60,17 +56,11 @@ fn get_files(parent_dir: &std::path::Path) -> (Vec<std::path::PathBuf>, Vec<std:
 fn is_dojo101_file(path: &std::path::Path) -> bool {
     for ancestor in path.ancestors() {
         let dir_name = ancestor.file_name().unwrap_or_default().to_str().unwrap();
-        if dir_name == "quality" || dir_name.starts_with('.') {
+        if dir_name == "quality" || dir_name == "images" || dir_name.starts_with('.') {
             return false;
         }
     }
     path.is_file()
-}
-
-fn get_oldest_files(files: &[std::path::PathBuf], count: usize) -> Vec<std::path::PathBuf> {
-    let mut sorted_files = files.to_vec();
-    sorted_files.sort_by_key(|path| fs::metadata(path).unwrap().modified().unwrap());
-    sorted_files.into_iter().take(count).collect()
 }
 
 fn check_subdirectories(parent_dir: &std::path::Path) {

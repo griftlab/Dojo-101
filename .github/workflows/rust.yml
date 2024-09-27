@@ -26,3 +26,6 @@ jobs:
     - name: Run tests
       working-directory: ./quality
       run: cargo test --verbose
+    - name: Run quality script
+      working-directory: ./quality
+      run: cargo run
