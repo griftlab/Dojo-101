@@ -1,4 +1,4 @@
-name: Rust quality test
+name: Rust script quality test
 
 on:
   push:

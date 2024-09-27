@@ -1,7 +1,6 @@
 /*
-Script de maintenance du contenu Dojo-101
-- Dépendances, code et compilation du script vérifié via github Action: Oui
-- Exécution du script lors des workflows : Beta.
+Script de maintenance du contenu Dojo-101.
+Avant toute modificaiton, lire le workflow github correspondant.
 */
 
 use std::fs;
