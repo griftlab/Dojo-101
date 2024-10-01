@@ -1,14 +1,24 @@
-# Dumper la RAM
+# Dump de la RAM
 
-## Compatible avec Volatility: 
+* [Winpmem](https://github.com/Velocidex/c-aff4/releases) Compatible avec Volatility.
 
-### Winpmem:
-https://github.com/Velocidex/c-aff4/releases
+```powershell
 C:\winpmem_v3.3.rc3.exe --output memdump.raw --format raw --volume_format raw
+```
+
+* `Dumpit.exe`
 
 
-### Dumpit.exe, 
 
-## Autre outils: 
+* `NotMyFault.exe` 
 
-Sysinternals: procdump, ou l'ecran bleu windows avec NotMyFault.exe et le parametrage dans système -> avancé -> sauvegarde et restauration -> vidage de la RAM
+* `Windows` : système -> avancé -> sauvegarde et restauration -> vidage de la RAM
+
+* [process hacker](https://processhacker.sourceforge.io/) On peut visualiser les process mais aussi directement lire les strings en ram etc : `click droit sur le process -> proprietés -> memory -> strings`
+
+* `Sysinternals: procdump` 
+
+```powershell
+C:\Users\Chase\Documents>.\procdump.exe -accepteula -ma <pid> 
+.\procdump.exe -accepteula -ma 6800
+```
