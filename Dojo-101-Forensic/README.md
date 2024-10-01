@@ -6,11 +6,11 @@
 
 ## Avant intervention
 
-1. Disposer du materiel adéquat : duplicateur (Hardware write blocker), appareil photo, softwares etc.
+1. Disposer du matériel adéquat : duplicateur (Hardware write blocker), appareil photo, softwares, etc.
 
 2. Disposer des templates de document : timeline, rapport
 
-3. Informer les parties prenantes et faire valider la méthodologie de conservation des preuves en vue d'un dépot de plainte.
+3. Informer les parties prenantes et faire valider la méthodologie de conservation des preuves en vue d'un dépôt de plainte.
 
 ## Pendant intervention
 
@@ -20,13 +20,13 @@
 
 ## Si la machine allumée
 
-1. Isolation réseaux
+1. Isolation réseau
 
 2. Capture de la RAM et des artefacts
 
 3. Déchiffrement ou récupération de la clé de chiffrement
 
-4. Arret et copie du disque
+4. Arrêt et copie du disque
 
 ## Si la machine est éteinte
 
@@ -46,12 +46,23 @@
 
 * [FIR](https://github.com/certsocietegenerale/FIR)
 
-### Misc
+## Misc
 
-Montage read only :
+### Montage read only :
 
 ```bash
 mount  -o loop,ro,noexec img.dd  /mnt
 ```
-> ne remplace pas duplicateur avec un blocker Hardware !
+> ne remplace pas duplicateur avec un bloqueur Hardware en écriture !
+
+
+### dc3dd : 
+
+fork de dd mais qui tolère les clusters défectueux
+
+`$ dc3dd if=/dev/sdb hof=/mnt/extdrive/WKS042.dd log=/mnt/extdrive/dd_WKS042.log`
+
+Pour le montage il faut determiner le secteur du début de partition (NTFS)
+
+`$ mmls WKS042.dd`
 
