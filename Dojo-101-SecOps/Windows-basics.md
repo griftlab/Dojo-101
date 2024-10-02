@@ -14,7 +14,7 @@
 | Nom | Description |
 |-----|-------------|
 | IDLE | Ce processus ne sert qu’à comptabiliser le temps d’inactivité du CPU |
-| System | process Contient la majorité de l’espace d’adressage du kernel |
+| System | Ce processus contient la majorité de l’espace d’adressage du kernel |
 | Session manager | Smss.Exe |
 | Windows subsystem | Csrss.exe |
 | Session 0 init | Wininit.exe |
@@ -25,7 +25,7 @@
 
 ## Security components (liste non exhaustive)
 
-* Gestionnaire d'identification (applications et compte microsoft)
+* Gestionnaire d'identification (applications et compte Microsoft)
 
 * SRM – Security Reference Monitor
 
@@ -54,11 +54,11 @@
 
 ###  Primary token 
 
-assigné à chaque process, pour que le SRM connaissent les permissions
+assigné à chaque process, pour que le SRM connaisse les permissions
 
 ### Impersonnation token 
 
-pour certains services, pour prendre d'autres identité.
+Pour certains services, pour prendre d'autres identités.
 
 * SecurityAnonymous: current user/client cannot impersonate another user/client
 * SecurityIdentification: current user/client can get the identity and privileges of a client, but cannot impersonate the client
@@ -67,7 +67,7 @@ pour certains services, pour prendre d'autres identité.
 
 ## Privilèges
 
-Détenu ou hérité par un compte, par éxemple
+Détenu ou hérité par un compte, par exemple
 
 * SeImpersonatePrivilege
 * SeAssignPrimaryPrivilege
@@ -128,7 +128,7 @@ Settings > Update & Security > Windows Security > Device Security
 
 ## SAM
 
-Stockage (historique) des compte locaux : `C:\Windows\system32\config\SAM` ou `HKEY_LOCAL_MACHINE\SAM\`
+Stockage (historique) des comptes locaux : `C:\Windows\system32\config\SAM` ou `HKEY_LOCAL_MACHINE\SAM\`
 
 ## Vault
 
@@ -162,12 +162,12 @@ bcdboot c:\Windows /l en-us /s : All
 
 ### Images de boot 
 
-> les images distribué par microsoft n'ont pas de partition gpt, il n'est pas possible de booter sur une clé usb en copiant l'image (ok pour un DVD ou une VM). Il faut créer la partition gpt manuellement ou avec un outil (rufus) et désactiver le secureboot pour booter sur la clé (secureboot=produit commercial=Microsoft=pas de signature des logiciel GPLv3)
+> Les images distribuées par Microsoft n'ont pas de partition gpt, il n'est pas possible de booter sur une clé USB en copiant l'image (ok pour un DVD ou une VM). Il faut créer la partition gpt manuellement ou avec un outil (rufus) et désactiver le secureboot pour booter sur la clé (secureboot=produit commercial=Microsoft=pas de signature des logiciels GPLv3)
 
 ### Dual boot
 
 * Uniquement pour partition MBR
-* commande pour shooter grub / reparer le bootmgr / bcd : `bootsect /nt60 <drive name>: /mbr`
+* commande pour shoote le grub et réparer le bootmgr / bcd : `bootsect /nt60 <drive name>: /mbr`
 
 
 ## Startup Folders
@@ -186,7 +186,7 @@ And startup folder all users:
 
 * Contrôleur de domaine
 * PdC (synchro heure)
-* Global-Catalog (contient tout les objects des domaines AD)
+* Global-Catalog (contient tous les objets des domaines AD)
 * RID (gère les Security ID)
 * Infrastructure master (unicité des noms)
 
@@ -195,18 +195,18 @@ And startup folder all users:
 
 * AD
 * DNS
-* remote desktop
+* remonté desktop
 
 ## Vérifier si une IP est dispo:
 
 * zone forward du serveur DNS (cocher Associated pointer pour créer automatiquement dans la reverse)
 * ping et nslokup (zone reverse DNS)
-* remote desktop (au cas ou le firewall empêche la réponse ICMP)
+* remonté desktop (au cas ou le firewall empêche la réponse ICMP)
 
 	
 ## Moyens d'accès à distance:
 
-* remote desktop `mstsc.exe`
+* remonté desktop `mstsc.exe`
 * winRM
 * Console
 
@@ -298,7 +298,7 @@ net use \\target\ipc$ "" /user:""
 
 `Set-WinUserLanguageList -LanguageList [en-US |fr-FR]`
 
-## Niveau d'authentification remote desktop:
+## Niveau d'authentification remonté desktop:
 
 `GPO locale` -> `Security Options` -> `Network Security`: `LAN manager`
 
@@ -311,7 +311,7 @@ net use \\target\ipc$ "" /user:""
 
 `Get-Acl -Path C:\Folder1 | Set-Acl -Path C:\Folder2`
 
-## Lister les listener WinRM:
+## Lister les listeners WinRM:
 
 `winrm enumerate winrm/config/listener`
 

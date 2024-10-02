@@ -126,7 +126,7 @@ Stratégie de sécurité du contrôleur de domaine -> Paramètres de sécurité/
 
 ## GPO
 
-> ATTENTION apres changement d'OU les parametre de l'ancienne GPO ne disparaisse pas forcement !
+> ATTENTION âpre changement d'OU les paramètres de l'ancienne GPO ne disparaisse pas forcement !
 
 `rsop.msc`
 `gpresult /z`
@@ -135,7 +135,7 @@ Stratégie de sécurité du contrôleur de domaine -> Paramètres de sécurité/
 
 `adsiedit.msc`
 
-## Tester la connection avec le controleur de domaine:
+## Tester la connexion avec le contrôleur de domaine:
 
 `nltest /sc_query:<domain>`
 
