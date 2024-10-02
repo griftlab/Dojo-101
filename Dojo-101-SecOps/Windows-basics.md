@@ -46,11 +46,80 @@
 
 ## Tokens (Security Access Token)
 
-* Utilisé par le `Security Reference Monitor`
+* Utilisé par le `Security Reference Monitor` et `LSASSexe` il contient : 
 
-* Primary token : assigné à chaque process, pour que le SRM connaissent les permissions
+- user SIDs(security identifier)
+- group SIDs
+- privileges
 
-* Impersonnation token : pour certains services, pour prendre d'autres identité.
+###  Primary token 
+
+assigné à chaque process, pour que le SRM connaissent les permissions
+
+### Impersonnation token 
+
+pour certains services, pour prendre d'autres identité.
+
+* SecurityAnonymous: current user/client cannot impersonate another user/client
+* SecurityIdentification: current user/client can get the identity and privileges of a client, but cannot impersonate the client
+* SecurityImpersonation: current user/client can impersonate the client's security context on the local system
+* SecurityDelegation: current user/client can impersonate the client's security context on a remote system
+
+## Privilèges
+
+Détenu ou hérité par un compte, par éxemple
+
+* SeImpersonatePrivilege
+* SeAssignPrimaryPrivilege
+* SeTcbPrivilege
+* SeBackupPrivilege
+* SeRestorePrivilege
+* SeCreateTokenPrivilege
+* SeLoadDriverPrivilege
+* SeTakeOwnershipPrivilege
+* SeDebugPrivilege
+
+## permissions memento
+
+```txt
+   permission is a permission mask and can be specified in one of two forms:
+        a sequence of simple rights:
+                D - Delete access
+                F - Full access (Edit_Permissions+Create+Delete+Read+Write)
+                N - No access
+                M - Modify access (Create+Delete+Read+Write)
+                RX - Read and eXecute access
+                R - Read-only access
+                W - Write-only access
+        a comma-separated list in parentheses of specific rights:
+                DE - Delete
+                RC - read control
+                WDAC - write DAC
+                WO - write owner
+                S - synchronize
+                AS - access system security
+                MA - maximum allowed
+                GR - generic read
+                GW - generic write
+                GE - generic execute
+                GA - generic all
+                RD - read data/list directory
+                WD - write data/add file
+                AD - append data/add subdirectory
+                REA - read extended attributes
+                WEA - write extended attributes
+                X - execute/traverse
+                DC - delete child
+                RA - read attributes
+                WA - write attributes
+        inheritance rights can precede either form and are applied
+        only to directories:
+                (OI) - object inherit
+                (CI) - container inherit
+                (IO) - inherit only
+                (NP) - don’t propagate inherit
+                (I)  - Permission inherited from parent container
+```
 
 
 ## Trusted Plateform module (TPM)
@@ -273,3 +342,10 @@ Chemin : `c:\windows\system32\drivers\etc\hosts`
 
 * [PowerToys](https://learn.microsoft.com/fr-fr/windows/powertoys/install)
 
+## Tests
+
+Prolonger la licence d'éssai (3*30 jours)
+
+```powershell
+slmgr.vbs -rearm
+```

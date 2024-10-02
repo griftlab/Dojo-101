@@ -1,4 +1,4 @@
-# Azure AD Basics
+# Azure AD Basics (Entra ID)
 
 ## Auth:
 
