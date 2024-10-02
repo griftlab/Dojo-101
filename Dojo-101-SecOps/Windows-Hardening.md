@@ -1,14 +1,18 @@
-﻿# Durcissement / Hardening Windows
+﻿# Durcissement / Hardening Windows et AD
 
 ## Ressources
 
 * [Guide ANSSI AD](https://cyber.gouv.fr/publications/recommandations-pour-ladministration-securisee-des-si-reposant-sur-ad)
+
+* [PingCastle](https://www.pingcastle.com/)
+
 * [bloodhound](https://github.com/SpecterOps/BloodHound)
 * [Sharphound](https://github.com/BloodHoundAD/SharpHound)
-* [PingCastle](https://www.pingcastle.com/)
-* [ORAD](https://github.com/ANSSI-FR/ORADAD)
+
 * [Nuclei](https://github.com/projectdiscovery/nuclei)
+
 * [Privesc](https://github.com/carlospolop/PEASS-ng)
+
 * [Privesc bins](https://lolbas-project.github.io/)
 
 
