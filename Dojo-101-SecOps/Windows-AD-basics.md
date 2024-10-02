@@ -1,13 +1,13 @@
 # Active Directory (AD) Basics
 
-Notes faites à partir de TryHackMe et Microsoft Learn
 
-## Domain Services 
- 
-- LDAP - Lightweight Directory Access Protocol; provides communication between applications and directory services
-- Certificate Services - allows the domain controller to create, validate, and revoke public key certificates
-- DNS, LLMNR, NBT-NS - Domain Name Services for identifying IP hostnames
-- Domain Authentication Overview - 
+## FSMO:
+
+* Contrôleur de domaine
+* PdC (synchro heure)
+* Global-Catalog (contient tous les objets des domaines AD)
+* RID (gère les Security ID)
+* Infrastructure master (unicité des noms)
 
 ## Authentification
 
@@ -34,9 +34,9 @@ Notes faites à partir de TryHackMe et Microsoft Learn
 
 ## creds storage
 
-name: NTDS.dit
+name: **NTDS.dit**
 
-- Stored by default in %SystemRoot%\NTDS
+- Stored by default in `%SystemRoot%\NTDS`
 - accessible only by the domain controller
 
 
@@ -143,7 +143,7 @@ Stratégie de sécurité du contrôleur de domaine -> Paramètres de sécurité/
 
 ## Hybrid with Azure
 
-| Windows Server AD	 | Azure AD |
+| Windows Server AD	 | Azure AD / Entra ID |
 |--------------------|----------|
 | LDAP | Rest APIs |
 | NTLM | OAuth/SAML |

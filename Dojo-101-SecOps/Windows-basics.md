@@ -79,7 +79,9 @@ Détenu ou hérité par un compte, par exemple
 * SeTakeOwnershipPrivilege
 * SeDebugPrivilege
 
-## permissions memento
+## permissions NTFS
+
+lecture historique des permissions :
 
 ```txt
    permission is a permission mask and can be specified in one of two forms:
@@ -181,14 +183,6 @@ And startup folder all users:
 * shell:common startup = %programdata%\Microsoft\Windows\Start Menu\Programs\Startup 
 * shell:start menu = start menu in Windows-10
 * shell:common start menu = All user start menu in Windows-10 
-
-## Roles AD:
-
-* Contrôleur de domaine
-* PdC (synchro heure)
-* Global-Catalog (contient tous les objets des domaines AD)
-* RID (gère les Security ID)
-* Infrastructure master (unicité des noms)
 
 
 ## Vérifier si nom machine dispo:
