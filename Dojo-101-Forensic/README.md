@@ -36,6 +36,8 @@
 
 ## Copie du Disque
 
+> privilégier la copie physique afin de garantir l'intégrité des preuves.
+
 * **Device to Device (clone)** : This can be performed by obtaining an exact bit-by-bit replica of an original device in another - previously wiped - device with equal or greater capacity.
 
 * **Device to File (image)** : This can be performed by generating one or more files that contain, linked together, an identical copy of the original device. The most widespread is `dd` (`raw`) or `E01` formats
@@ -53,16 +55,20 @@
 ```bash
 mount  -o loop,ro,noexec img.dd  /mnt
 ```
-> ne remplace pas duplicateur avec un bloqueur Hardware en écriture !
+> ne remplace pas duplicateur avec un bloqueur Hardware en écriture.
 
 
 ### dc3dd : 
 
 fork de dd mais qui tolère les clusters défectueux
 
-`$ dc3dd if=/dev/sdb hof=/mnt/extdrive/WKS042.dd log=/mnt/extdrive/dd_WKS042.log`
+```bash
+dc3dd if=/dev/sdb hof=/mnt/extdrive/WKS042.dd log=/mnt/extdrive/dd_WKS042.log
+```
 
 Pour le montage il faut determiner le secteur du début de partition (NTFS)
 
-`$ mmls WKS042.dd`
+```bash
+mmls WKS042.dd
+```
 
