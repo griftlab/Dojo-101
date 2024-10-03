@@ -1,6 +1,7 @@
 ﻿# Durcissement / Hardening Windows et AD
 
-## Ressources
+
+## Windows AD
 
 * [Guide ANSSI AD](https://cyber.gouv.fr/publications/recommandations-pour-ladministration-securisee-des-si-reposant-sur-ad)
 
@@ -11,9 +12,20 @@
 
 * [Nuclei](https://github.com/projectdiscovery/nuclei)
 
+* [SharpView](https://github.com/tevora-threat/SharpView)
+
+* [ADRecon](https://github.com/adrecon/ADRecon)
+
+* [Goup3r](https://github.com/Group3r/Group3r)
+
+
+## Windows StandAlone
+
 * [Privesc](https://github.com/carlospolop/PEASS-ng)
 
 * [Privesc bins](https://lolbas-project.github.io/)
+
+* [Persistance snipper](https://github.com/last-byte/PersistenceSniper)
 
 
 ## Microsoft Security Compliance Toolkit (MSCT)

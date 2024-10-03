@@ -39,7 +39,7 @@ Savoir agir en situation.
 
 On préfère l'expérience et la mise en situation aux cours magistraux.
 
-## Prioncipe d' *approche par compétence*
+## Principe d' *approche par compétence*
 
 1. identifier les **situations pro**
 
