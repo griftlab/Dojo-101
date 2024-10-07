@@ -44,13 +44,13 @@
 
 * Porter atteinte aux Critères D.I.C.T.
 
-* Injections (Saisies utilisateurs non nettoyées, XSS, CSRF prompt injection, etc.)
+* Injections classiques (Saisies utilisateurs non nettoyées, XSS, CSRF prompt injection, etc.)
 
-* Inféction,  corruption du modèle, data poisonning 
+* Infection,  corruption du modèle, data poisonning, Injection de contexte (par exemple : faire lire au serveur le contenu d'un fichier sensible ou malveillant qui sera ajouté au modèle et modifiera les réponses de l'IA.)
 
 * Manipulation / Fonctionnalité non prévue
 
-* Fuite de données sensible du fait du Modèle ou de l'absence de restriction
+* Fuite de données sensibles du fait du Modèle ou de l'absence de restriction
 
 
 
