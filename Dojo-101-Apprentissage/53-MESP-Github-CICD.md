@@ -16,6 +16,7 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 * [Github security on MS learn](https://learn.microsoft.com/en-us/collections/rqymc6yw8q5rey)
 * [Pentest-Ground](https://pentest-ground.com)
 * [Blog Github Security](https://github.blog/category/security/)
+* [Octoscan](https://github.com/synacktiv/octoscan)
 
 ## Contexte
 

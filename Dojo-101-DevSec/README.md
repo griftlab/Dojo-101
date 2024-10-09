@@ -23,7 +23,9 @@
 
 ## Integration de la la sécurité aux canaux CI/CD
 
-[Chaine DevOps](https://learn.microsoft.com/fr-fr/azure/cloud-adoption-framework/ready/considerations/devops-toolchain#azure-devops-and-github-toolchain)
+* [Chaine DevOps](https://learn.microsoft.com/fr-fr/azure/cloud-adoption-framework/ready/considerations/devops-toolchain#azure-devops-and-github-toolchain)
+
+* [Scan des CI/CD - Octoscan](https://github.com/synacktiv/octoscan)
 
 ### CI - Intégration continue
 

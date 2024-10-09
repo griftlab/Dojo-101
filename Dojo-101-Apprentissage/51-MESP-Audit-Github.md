@@ -20,10 +20,15 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 En tant que consultant DevOps. Vous devez examiner le dépôt GitHub en question afin d'identifier les mauvaises pratiques, en particulier en termes de sécurité :
 
 1. **Sécurité des dépôts** : Vérifiez si des données sensibles sont exposées dans le code ou les fichiers de configuration.
+
 2. **Gestion des dépendances** : Assurez-vous que toutes les dépendances sont à jour et ne présentent pas de vulnérabilités connues.
+
 3. **Pratiques CI/CD** : Examinez les pipelines d'intégration et de déploiement continus pour identifier les améliorations potentielles.
+
 4. **Tests** : Vérifiez la couverture des tests et la qualité des tests unitaires et d'intégration.
+
 5. **Documentation** : Assurez-vous que le code est bien documenté et facile à comprendre.
+
 6. **Conformité aux normes de codage** : Vérifiez si le code suit les meilleures pratiques et les normes de codage.
 
 Vous pouvez forker le projet afin d'y tester différents outils et fonctionalités.
