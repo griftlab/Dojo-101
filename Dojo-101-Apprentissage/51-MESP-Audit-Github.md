@@ -2,7 +2,7 @@
 
 Vous êtes chargé de procéder à un audit sur le Dépot Github du BackEnd de l'application .NET.
 
-Durée: 3 jours
+Durée: 2 jours
 
 Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et les sources sont sur le projet Github Dojo-101, merci d'en tenir compte dans vos usages.
 
@@ -13,7 +13,10 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 * [Github security on MS learn](https://learn.microsoft.com/en-us/collections/rqymc6yw8q5rey)
 * [Blog Github Security](https://github.blog/category/security/)
 * [Snyk](https://docs.snyk.io/)
-
+* [Octoscan](https://github.com/synacktiv/octoscan)
+* [Github security on MS learn](https://learn.microsoft.com/en-us/collections/rqymc6yw8q5rey)
+* [CodeQL](https://codeql.github.com/)
+* [Dependabot](https://github.com/dependabot)
 
 ## Contexte
 
@@ -31,7 +34,7 @@ En tant que consultant DevOps. Vous devez examiner le dépôt GitHub en question
 
 6. **Conformité aux normes de codage** : Vérifiez si le code suit les meilleures pratiques et les normes de codage.
 
-Vous pouvez forker le projet afin d'y tester différents outils et fonctionalités.
+Vous forkerez le projet afin d'y implémenter et tester les différents outils et fonctionalités.
 
 Après ces deux jours d'audit, vous disposerez d'un troisième jour pour rédiger un rapport détaillé sur vos observations et recommandations.
 
