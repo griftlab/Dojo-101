@@ -31,8 +31,15 @@ Les enjeux ne sont pas seulement financiers : les emplois, l’image et la stabi
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+## Les principaux vercteurs d'attaques
 
+* **Mail** (ex: phishing)
+* **Exploitation de vulnérabilité** (ex: application)
+* **Site malveillant** (ex: lien vers un site compromis)
+* **Accès à distance** (ex: RDP)
+* **Accès physique** (ex: clé USB)
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ## Notions SSI
 
 * **système d’information** :  ensemble organisé de ressources (matériel, logiciels, personnel, données et procédures) permettant de traiter et de diffuser de l’information.
