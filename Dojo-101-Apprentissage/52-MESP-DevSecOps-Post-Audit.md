@@ -18,10 +18,13 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 
 * [Blog Github Security](https://github.blog/category/security/)
 
+* [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)
 
 ## Contexte
 
 Afin de tester les vulnérabilités découvertes lors de l'audit, lors des prochains tests de non-régression (TNR), l'équipe Dev demande : 
+
+0. Faire le lien entre les vulnérabilités découvertes et le référentiel **OWASP ASVS**
 
 1. La mise en place d'un **Kanban** avec des **User Stories** dans un **backlog** leur permettant d'éstimer le travail à réaliser pour patcher l'application. 
 
