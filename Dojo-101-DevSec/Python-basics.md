@@ -202,7 +202,7 @@ urllib.parse.quote('&')
 #'%26'
 ```
 
-## http client:
+## http.client:
 
 ```python
 import http.client
@@ -226,6 +226,54 @@ connection.close()
 conn = http.client.HTTPSConnection('enirdd6d0146.x.pipedream.net')
 conn.request("POST", "/", '{ "name": "Princess Leia" }', {'Content-Type': 'application/json'})
 ```
+
+## Request
+
+### GET
+
+```python
+import requests
+
+base_url = "https://localhost:3000"
+url = f"{base_url}/?lang=english"
+token = "ey...................."
+
+headers = {
+    "Authorization": f"Bearer {token}"
+}
+
+response = requests.get(url, headers=headers, verify=False)
+
+# Vérification des conditions de correspondance
+if response.status_code == 200 and ("success" in response.text or "16-bit" in response.text):
+    print("Condition matched: success or 16-bit found and status is 200")
+else:
+    print(f"Received status code: {response.status_code} with no matching content")
+```
+
+
+### POST
+
+```python
+import requests
+
+url = "http://localhost:4000/Login"
+payload = {
+    "user": "user",
+    "passwd": "password"
+}
+headers = {
+    "Content-Type": "application/json"
+}
+
+response = requests.post(url, json=payload, headers=headers)
+
+if response.status_code == 401:
+    print("Unauthorized access - status code 401")
+else:
+    print(f"Received status code: {response.status_code}")
+```
+
 
 ## request + BeautifulSoup
 
