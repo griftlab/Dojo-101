@@ -130,8 +130,7 @@ binascii.unhexlify('41')
 ## file:
 
 ```python
-file = ".gitconfig"
-with open(file, 'r') as f:
+with open("nomDuFichier", 'r') as f:
     line = f.readline()
     while line:
         print(line)
