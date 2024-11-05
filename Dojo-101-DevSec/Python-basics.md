@@ -246,7 +246,7 @@ response = requests.get(url, headers=headers, verify=False)
 
 # Vérification des conditions de correspondance
 if response.status_code == 200 and ("success" in response.text or "16-bit" in response.text):
-    print("Condition matched: success or 16-bit found and status is 200")
+    print("Condition matched and status is 200")
 else:
     print(f"Received status code: {response.status_code} with no matching content")
 ```
@@ -353,3 +353,6 @@ if __name__ == "__main__":
 import threading
 threading.Thread( target = <fonction>, args = [ <argument> ] ).start()
 ```
+
+## Fuzzing exemple
+

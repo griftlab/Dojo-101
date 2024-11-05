@@ -8,9 +8,9 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 
 ## Ressources
 
+* [Windows Security Baselines](https://learn.microsoft.com/fr-fr/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines)
 * [MSCT](https://learn.microsoft.com/fr-fr/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10)
 * [auditpol](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/auditpol)
-* [MS Security Blog](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines)
 * [Gestes professionnels](https://github.com/Aif4thah/Dojo-101)
 
 ## Contexte
