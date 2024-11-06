@@ -41,6 +41,12 @@ syntaxe: package@version
 * s'assurer que l'on va charcher les dépendance au bon endroit
 * parfois, mieux vaut télécharger les dépendances manuellement via pull request.
 
+### Github action
+
+certains CI-CD s'appuie sur des dépots publics tiers, comme par éxemple 
+
+
+
 ### npm
 
 fichier `.bpmrc` ou commande `npm config set registry`

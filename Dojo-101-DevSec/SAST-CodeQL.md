@@ -111,3 +111,8 @@ Go -> non testé – projet spécifique
 Java -> bon niveau, besoin de règles spécifiques Spring
 JavaScript / TypeScript -> bon niveau
 Python -> un test uniquement, multiples « false négatives »
+
+## Inclusion dans les CI-CD
+
+* [CodeQL-action](https://github.com/github/codeql-action)
+

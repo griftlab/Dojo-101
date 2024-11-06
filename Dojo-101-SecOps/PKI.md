@@ -28,6 +28,12 @@
 * Le cas échéant, les protocoles d’enrôlement
 * Les erreurs d’implémentation ou de configuration
 
+## Revocation et vérification de validité
+
+* CRL (Ceritifcate Revocation list)
+
+* requêtes OCSP
+
 ## Emplacements des certificats
 
 ### Certstore Windows

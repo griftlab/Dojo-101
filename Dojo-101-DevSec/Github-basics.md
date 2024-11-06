@@ -38,7 +38,7 @@
 
 ## Features générales
 
-* Copilote (IA)
+* Copilot (IA)
 * CodeSpace (VM & storage lié à une extension de l'éditeur)
 * Projects (Boards (Kanban), Data, Insight (Indicateurs), Automation (API, Github Actions))
 * InnerSource -> application des pratiques OpenSource sur des dépots privés d'entreprises
@@ -224,3 +224,9 @@ steps:
 ```
 
 [Documentation Github](https://docs.github.com/fr/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions)
+
+## Scan des secrets
+
+* defaut : A activer dans les options `security` -> `Secret scanning` et `push protection`
+
+* [Gitleaks](https://github.com/gitleaks/gitleaks) : dans le repartoire du `.git` via la commande `gitleaks detect -v`
