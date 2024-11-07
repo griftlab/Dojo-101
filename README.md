@@ -11,11 +11,6 @@ Dojo-101 is a project for capturing experience and knowledge in cybersecurity.
 
 Usable offline with a simple text editor, its purpose is to freely share knowledge.
 
-### Language :
-
-[![fr](https://img.shields.io/badge/Français-🇫🇷-blue.svg)](./README-fr.md)
-[![en](https://img.shields.io/badge/English-🇬🇧-red.svg)](./README.md)
-
 > ⚠️ [This repository, together with its tools, is provided by Taisen-Solutions on an “as is” basis. Taisen-Solutions makes no representations or warranties of any kind, express or implied, as to the operation of the information, content, materials, tools, services and/or products included on the repository. Taisen-Solution disclaims, to the full extent permissible by applicable law, all warranties, express or implied, including but not limited to, implied warranties of merchantability and fitness for a particular purpose. Before using, please read the project’s disclaimer](./CODE_OF_CONDUCT.md)
 
 
