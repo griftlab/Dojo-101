@@ -18,7 +18,6 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 * [Terraform](https://www.terraform.io/)
 
 
-
 ## Contexte
 
 Vous faites partie de la purple team de l'entreprise. Afin de former les équipes du SOC à la détection des attaques, il vous est demandé de déployer vuln-light-apps dans un microservice docker.
@@ -34,9 +33,9 @@ NB: *ce contexte est issu du Lab déjà mis en place*
 
 2. Vérifier que docker fonctionne (container Hello World)
 
-3. Prendre connaissance du projet Vulnerable-light-App
+3. Prendre connaissance du projet Vulnerable-light-App, lire son Dockerfile.
 
-4. Planifier dans un KanBan comment va se faire la mise en container de l'application.
+4. Planifier dans un KanBan comment va se faire la mise en container d'un nouveau service Web.
 
     * Passer en revue les étapes suivantes et créer une liste de tâche (story).
 
@@ -46,21 +45,21 @@ NB: *ce contexte est issu du Lab déjà mis en place*
 
     * Utiliser les colonnes "à venir", "en cours", "en test", "terminé" pour suivre l'avancement du Brief
 
-5. Créer un docker file
+5. Créer un nouveau dockerfile
 
-6. Automatiser l'installation et le lancement de vuln-light-apps
+6. Automatiser l'installation et le lancement d'un site Web, qui affichera votre "nom-prenom" ou "nom du groupe" lorsqu'on fera une requête web depuis la machine hôte. (techno de votre choix)
 
 7. Pousser votre travail sur un repo github.
 
 8. Les tests de build doivent se faire automatiquement lors du push sur GitHub
 
-9. Mettre à disposition votre container (Docker Hub / Registry)
+9. Optionel : Mettre à disposition votre container (Docker Hub / Registry)
 
-10. Appliquer les bonnes pratiques de sécurité issues du Guide ANSSI 
+10. Appliquer les bonnes pratiques de sécurité issues du Guide docker ANSSI 
 
 11. Exporter les logs sur la machine hôte afin de garder les traces en cas de suppression de containers
 
-12. Pour aller plus loin : réaliser un déploiement à l'aide de Terraform
+12. Optionel : Pour aller plus loin, réaliser le déploiement à l'aide de Terraform
 
 
 ## Modalités d'évaluation
@@ -72,16 +71,14 @@ NB: *ce contexte est issu du Lab déjà mis en place*
 
 ## Livrables
 
- * un projet Github / Groupe, le repos doit contenir les Push/Merge/Pull Request de chaque utilisateur du groupe.
+* un projet Github / Groupe, le repos doit contenir les Push/Merge/Pull Request de chaque utilisateur du groupe.
 
- * Identifiant de container / commande docker permettant de tester son fonctionnement.
-
- * Preuves de l'application des bonnes pratiques de sécurité et de la configuration des logs sur l'hôte
+* Preuves de l'application des bonnes pratiques de sécurité et de la configuration des logs sur l'hôte.
 
 
 ## Critères de performance
 
-* La commande `docker run <container> -p 3000:3000` fonctionne.
+* La commande `docker run <container> -p x:x`, `docker build` ou `docker compose up` fonctionne.
 
 * Les mesures de sécurité sont appliquées
 

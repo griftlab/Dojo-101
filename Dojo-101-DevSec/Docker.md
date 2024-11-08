@@ -189,6 +189,52 @@ docker build .
 l'image est ensuite ajouté (`docker image ls`)
 
 
+## Docker Compose
+
+* [Docker compose](https://docs.docker.com/compose/intro/compose-application-model/)
+* [from @NicolasW-7 ](https://github.com/NicolasW-7/AIS-Brief-et-TIPS/blob/main/Projet/Vaultwarden/Vaultwarden/docker-compose.yml)
+
+```yml
+version: '3.7'
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    environment:
+      WEBSOCKET_ENABLED: true
+      ADMIN_TOKEN:  #YourAdminToken
+      DOMAIN: # Your domain; vaultwarden needs to know it's https to work properly with attachments
+    volumes:
+      - vw-data:/data
+
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: always
+    ports:
+      - 443:443
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./ssl:/ssl
+      - caddy-config:/config
+      - caddy-data:/data
+      - caddy-logs:/logs
+    environment:
+      - DOMAIN= # Your domain.
+
+volumes:
+  vw-data:
+  caddy-config:
+  caddy-data:
+  caddy-logs:
+```
+
+```sh
+docker compose up -d
+```
+
 ## Aller plus loin
 
 ### Terraform
