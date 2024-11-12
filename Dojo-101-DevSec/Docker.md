@@ -188,6 +188,43 @@ docker build .
 
 l'image est ensuite ajouté (`docker image ls`)
 
+Exemple de build via github acitons : 
+
+```yml
+name: Docker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Build Docker image
+      run: docker build -t vulnerablelightapp .
+
+    - name: Run Docker container
+      run: docker run -d -p 3000:3000 vulnerablelightapp
+
+    - name: Wait for the container to be ready
+      run: sleep 30
+
+    - name: Test the application
+      run: curl -k https://127.0.0.1:3000
+```
+
 
 ## Docker Compose
 
