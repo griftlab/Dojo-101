@@ -1,6 +1,5 @@
-# Contributions
+# Contributing rules
 
-1. Pour contribuer, dites "comment vous avez fait", pas "comment il faudrait le faire"
-2. Vérifier que le contenu proposé n'existe pas déjà
-3. Que du texte / code / markdown. Pas de binaires, pas d'images.
-3. Proposer une **pull request**
+1. Say "how you did it", not "how it should be done"
+2. Check that the proposed content does not already exist.
+3. Markdown only, with the images in the Images folder.
