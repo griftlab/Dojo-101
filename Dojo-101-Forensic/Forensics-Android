@@ -1,0 +1,108 @@
+# Android Forensics
+
+## Ressources
+
+* [ADB](https://developer.android.com/tools/releases/platform-tools)
+
+* [MVT Mobile Verification Toolkit](https://github.com/mvt-project/mvt)
+
+* [TEHTRIS MTD Legacy](https://play.google.com/store/apps/details?id=com.tehtris.egambit.enterprise)
+
+## Android mode Dev + debug USB
+
+1. `Paramètres` -> `à propos du téléphone` -> `Numéro de build` * 4
+
+2. `Paramètres` -> `Systèmes` -> `Optins pour les développeurs` -> `Debogage USB`
+
+## Adb
+
+lancement du serveur adb : 
+
+```powershell
+.\adb.exe version
+.\adb.exe start-server
+```
+
+lister les devices
+
+```powershell
+.\adb.exe devices
+.\adb.exe get-serialno
+.\adb.exe get-state
+```
+
+Si `unauthorized`, autorisation sur le téléphone à valider
+
+parcourir les fichiers
+
+```powershell
+.\adb.exe shell ls /
+```
+
+Pull / Push de fichiers
+
+```powershell
+.\adb.exe <push|pull> <source> <destination>
+```
+
+Lire les Logs
+
+```powershell
+.\adb.exe logcat -d > Logs.txt
+```
+
+Lister les packages
+
+```powershell
+.\adb.exe shell pm list packages
+```
+
+Arrêt du serveur adb : 
+
+```powershell
+.\adb.exe kill-server
+```
+
+## Backup pour comparaison aux Iocs
+
+### Via une appli tierce
+
+ex: Backup Local ou Cloud
+
+### Via adb
+
+Backup des SMS
+
+```sh
+adb backup -nocompress com.android.providers.telephony
+```
+
+Backup complète
+
+```sh
+adb backup -nocompress -all
+```
+
+### Extraction des backups
+
+* [ABE](https://github.com/nelenkov/android-backup-extractor)
+* [AB Decrypt](https://github.com/joernheissler/ab-decrypt)
+
+ou via l'outil `MVT` : `mvt-android check-backup --output /path/to/results/ /path/to/backup.ab`
+
+
+## Recherche d'IoCs
+
+```sh
+mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
+```
+
+## Analyse des applications
+
+Peut se faire localement avec `Google Play Protect`
+
+## Compte google
+
+* [google security checkup](myaccount.google.com/security-checkup)
+
+* [Support Google](https://support.google.com/accounts/answer/6294825?)

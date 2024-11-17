@@ -42,33 +42,4 @@
 
 * **Device to File (image)** : This can be performed by generating one or more files that contain, linked together, an identical copy of the original device. The most widespread is `dd` (`raw`) or `E01` formats
 
-## Collecte d'artefact
-
-* [FASTIR](https://github.com/SekoiaLab/Fastir_Collector)
-
-* [FIR](https://github.com/certsocietegenerale/FIR)
-
-## Misc
-
-### Montage read only :
-
-```bash
-mount  -o loop,ro,noexec img.dd  /mnt
-```
-> ne remplace pas duplicateur avec un bloqueur Hardware en écriture.
-
-
-### dc3dd : 
-
-fork de dd mais qui tolère les clusters défectueux
-
-```bash
-dc3dd if=/dev/sdb hof=/mnt/extdrive/WKS042.dd log=/mnt/extdrive/dd_WKS042.log
-```
-
-Pour le montage il faut determiner le secteur du début de partition (NTFS)
-
-```bash
-mmls WKS042.dd
-```
 

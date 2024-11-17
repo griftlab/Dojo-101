@@ -1,9 +1,9 @@
 # Volatility
 
-Commençons par identifier le système d’exploitation d’où provient le dump :
+## OS
 
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw imageinfo
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw imageinfo
  Volatile Systems Volatility Framework 2.0
            Suggested Profile(s) : WinXPSP3x86, WinXPSP2x86 (Instantiated with WinXPSP2x86)
                       AS Layer1 : JKIA32PagedMemory (Kernel AS)
@@ -19,11 +19,10 @@ root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.ra
                      Image Type : Service Pack 3
 ```
 
-L’image semble provenir d’un Windows XP SP3 et a été créée le 09 Mai 2012 à 11 heures 06 et 48 secondes.
-Maintenant listons les processus y figurant :
+## Processus
 
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 pslist
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 pslist
  Volatile Systems Volatility Framework 2.0
   Offset(V)  Name                 PID    PPID   Thds   Hnds   Time 
  ———- ——————– —— —— —— —— ——————- 
@@ -51,12 +50,12 @@ root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.ra
  0xffb43c08 DumpIt.exe              124   1508      1     25 2012-05-09 11:06:46
 
 ```
-Yes, nous avons maintenant la liste des processus, le PID, PPID, nombre de threads, nombres d’handles, etc.
-Pour dumper tous les binaires, on procédera ainsi :
+
+## Dump memoire
 
 ```sh
-root@bt:/pentest/forensics/volatility# mkdir yopla
- root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw memdump --profile=WinXPSP3x86 –dump-dir yopla
+root@bt:/volatility# mkdir dumpFolder
+ root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw memdump --profile=WinXPSP3x86 –dump-dir dumpFolder
  Volatile Systems Volatility Framework 2.0
  ************************************************************************
  Writing System [     4] to 4.dmp
@@ -69,11 +68,10 @@ root@bt:/pentest/forensics/volatility# mkdir yopla
  …
  ```
 
-L’article n’étant pas orienté vers une analyse détaillée des  processus, je ne vais pas m’attaquer à l’analyse de ces différents dump.  Vous pouvez cependant regardé dans le précédent post, l’analyse du  binaire « PassKeep.exe« .
-Analysons maintenant les DLLs chargées par le processus DumpIt.exe (PID : 124) :
+## lister les DLL
 
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 dlllist –pid=124
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 dlllist –pid=124
  Volatile Systems Volatility Framework 2.0
  ************************************************************************
  DumpIt.exe pid:    124
@@ -94,11 +92,8 @@ Base         Size         Path
 
  ```
 
-Comme vous pouvez vous en douter, pour analyser les DLLs chargées par  un processus X, il suffit de remplacer le PID par celui de votre choix.  Par ailleurs, si vous avez remarqué, la ligne command line  nous donne une information concernant l’emplacement de l’outil sur le  système. Elle permet également de nous donner une information sur l’un  des noms d’utilisateur du système : rootbsd.
-Pour extraire les informations d’une des DLL chargée, on procédera de la manière suivante :
-
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 dlldump -r ntdll -D pony
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 dlldump -r ntdll -D pony
  Volatile Systems Volatility Framework 2.0
  Dumping ntdll.dll, Process: smss.exe, Base: 7c900000 output: module.368.10d45a0.7c900000.dll
  Dumping ntdll.dll, Process: csrss.exe, Base: 7c900000 output: module.584.3f69da0.7c900000.dll
@@ -121,8 +116,8 @@ root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.ra
  Dumping ntdll.dll, Process: wscntfy.exe, Base: 7c900000 output: module.1040.417d440.7c900000.dll
  Dumping ntdll.dll, Process: alg.exe, Base: 7c900000 output: module.1228.1047910.7c900000.dll
  Dumping ntdll.dll, Process: DumpIt.exe, Base: 7c900000 output: module.124.4378c08.7c900000.dll
-root@bt:/pentest/forensics/volatility# cd pony
-root@bt:/pentest/forensics/volatility/pony# ls
+root@bt:/volatility# cd pony
+root@bt:/volatility/pony# ls
 module.1040.417d440.7c900000.dll  module.1872.455bda0.7c900000.dll
  module.1044.45a65a0.7c900000.dll  module.1972.1114c08.7c900000.dll
  module.1092.46807a0.7c900000.dll  module.368.10d45a0.7c900000.dll
@@ -136,18 +131,21 @@ module.1040.417d440.7c900000.dll  module.1872.455bda0.7c900000.dll
  module.1864.1031a48.7c900000.dll
 
  ```
-Passons à la partie réseau en listant les connexions actives du système :
+
+
+## Connexion
 
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw connections
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw connections
  Volatile Systems Volatility Framework 2.0
   Offset(V)  Local Address             Remote Address            Pid   
  ———- ————————- ————————- ——
  ```
-Pas de chance, aucune information n’a pu être retrouvée. Tanpis, nous  allons nous rabattre sur le listing des ports en écoute sur le système :
+
+## Ports
 
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 sockets
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 sockets
  Volatile Systems Volatility Framework 2.0
   Offset(V)  PID    Port   Proto               Address        Create Time               
  ———- —— —— ——————- ————– ————————– 
@@ -168,11 +166,10 @@ root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.ra
 
  ```
 
-Ici, on peut remarquer que les ports 123, 137, 138, 139, 445, 500, etc. sont ouverts.
-Passons maintenant à l’analyse de la base de registre en localisant les adresses virtuelles des ruches :
+## Registry
 
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 hivelist
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 hivelist
  Volatile Systems Volatility Framework 2.0
  Virtual     Physical    Name
  0xe1ad3348  0x0a7e2348   \Device\HarddiskVolume1\Documents and Settings\rootbsd\Local  Settings\Application Data\Microsoft\Windows\UsrClass.dat
@@ -195,7 +192,7 @@ root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.ra
 On va maintenant lister les sous-clés de la ruche « \Device\HarddiskVolume1\WINXP\system32\config\SAM » :
 
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 hivedump -o 0xe145d820
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw --profile=WinXPSP3x86 hivedump -o 0xe145d820
  Volatile Systems Volatility Framework 2.0
  Last Written         Key
  2012-05-09 11:41:30  \SAM
@@ -258,7 +255,7 @@ root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.ra
  2012-05-09 11:41:30  \SAM\SAM\Domains\Builtin\Users\Names
  2012-05-09 11:41:30  \SAM\SAM\RXACT
 On peut également aller chercher des clés/sous-clés précises :
-root@bt:/pentest/forensics/volatility# python  vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey -K  « Software\Microsoft\Windows\CurrentVersion\Internet Settings »
+root@bt:/volatility# python  vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey -K  « Software\Microsoft\Windows\CurrentVersion\Internet Settings »
  Volatile Systems Volatility Framework 2.0
  Legend: (S) = Stable   (V) = Volatile
 —————————-
@@ -315,20 +312,19 @@ REG_DWORD     EnableHttp1_1   : (S) 1
 
 ```
 
-
-A ce stade, on essaye bien souvent d’aller récupérer les crédences  stockés en cache. Pour cela il est nécessaire de connaitre l’adresse  virtuelle de la ruche SYSTEM (-y) et de la ruche SAM (-s) (parfait, on a déjà récupéré l’information) :
+## Credentials
 
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw hashdump -y 0xe1019600 -s 0xe145d820
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw hashdump -y 0xe1019600 -s 0xe145d820
  Volatile Systems Volatility Framework 2.0
  ERROR   : psyco.support       : Unable to read hashes from registry
 Pas de chance de ce côté, aucune information n’est disponible. On va  essayer via un dump du secret LSA. Pour cela, il faut remplacer  l’adresse de la ruche SAM par celle de SECURITY :
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw lsadump -y 0xe1019600 -s 0xe1455980
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw lsadump -y 0xe1019600 -s 0xe1455980
  Volatile Systems Volatility Framework 2.0
  ERROR   : psyco.support       : Unable to read LSA secrets from registry
 Encore loupé, c’est pas notre jour ! ^_^
 Aller, on ne se démotive pas et on va aller regarder les clés présentes dans la ruche « \Device\HarddiskVolume1\WINXP\system32\config\software » (pour rappel, l’adresse virtuelle est 0xe14e4b60) :
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey –hive-offset 0xe14e4b60
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey –hive-offset 0xe14e4b60
  Volatile Systems Volatility Framework 2.0
  Legend: (S) = Stable   (V) = Volatile
 —————————-
@@ -353,10 +349,10 @@ Subkeys:
    (S) Windows 3.1 Migration Status
 
 ```
-Si l’on souhaite aller voir ce qui se trame dans la sous-clé « GemPlus« , il suffit de procéder ainsi :
+
 
 ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey –hive-offset 0xe14e4b60 –key « GemPlus »
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey –hive-offset 0xe14e4b60 –key « GemPlus »
  Volatile Systems Volatility Framework 2.0
  Legend: (S) = Stable   (V) = Volatile
 —————————-
@@ -369,10 +365,8 @@ Subkeys:
 ```
 
 
- Et now, on veut aller regarder à l’intérieur de « Cryptography » :
-
  ```sh
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey –hive-offset 0xe14e4b60 –key « GemPlus\Cryptography »
+root@bt:/volatility# python vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey –hive-offset 0xe14e4b60 –key « GemPlus\Cryptography »
  Volatile Systems Volatility Framework 2.0
  Legend: (S) = Stable   (V) = Volatile
 —————————-
@@ -382,74 +376,6 @@ root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.ra
 Subkeys:
    (S) SmartCards
    ```
-
-On continue ainsi jusqu’à avoir :
-
-```sh
-root@bt:/pentest/forensics/volatility# python  vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey  –hive-offset 0xe14e4b60 –key « GemPlus\Cryptography\SmartCards\GemSAFE »
- Volatile Systems Volatility Framework 2.0
- Legend: (S) = Stable   (V) = Volatile
-—————————-
- Registry: User Specified
- Key name: GemSAFE (S)
- Last updated: 2012-05-09 18:47:28 
-Subkeys:
-Values:
- REG_BINARY    Card List       : (S) 
- 0000   47 65 6D 53 41 46 45 20 53 6D 61 72 74 20 43 61    GemSAFE Smart Ca
- 0010   72 64 20 28 34 4B 29 00 47 65 6D 53 41 46 45 20    rd (4K).GemSAFE 
- 0020   53 6D 61 72 74 20 43 61 72 64 20 28 38 4B 29 00    Smart Card (8K).
- 0030   00
-Bon, rien de bien pertinant mais ca nous fait travailler les commandes :p.
-Allons voir ce qu’il y a dans la ruche SYSTEM :
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey –hive-offset 0xe1019600
- Volatile Systems Volatility Framework 2.0
- Legend: (S) = Stable   (V) = Volatile
-—————————-
- Registry: User Specified
- Key name: $$$PROTO.HIV (S)
- Last updated: 2012-05-09 20:06:06 
-Subkeys:
-   (S) ControlSet001
-   (S) ControlSet002
-   (S) LastKnownGoodRecovery
-   (S) MountedDevices
-   (S) Select
-   (S) Setup
-   (S) WPA
-   (V) CurrentControlSet
-On va regarder à l’intérieur de « ControlSet001\Services » :
-root@bt:/pentest/forensics/volatility# python vol.py -f /root/Desktop/memdump.raw –profile=WinXPSP3x86 printkey –hive-offset 0xe1019600 –key « ControlSet001\Services »
- Volatile Systems Volatility Framework 2.0
- Legend: (S) = Stable   (V) = Volatile
-—————————-
- Registry: User Specified
- Key name: Services (S)
- Last updated: 2012-05-09 11:06:48 
-Subkeys:
-   (S) Abiosdsk
-   (S) abp480n5
-   (S) ac97intc
-   (S) ACPI
-   (S) ACPIEC
-   (S) adpu160m
-   (S) aec
-   (S) AFD
-   (S) Aha154x
-   (S) aic78u2
-   (S) aic78xx
-   (S) Alerter
-   …
-   …
-```
-On pourrait continuer à chercher un peu partout mais je pense que vous avez compris le principe.
-Voilà donc que se termine le tour d’horizon de la première prise en main de Volatility. On a pas récupéré grand chose au final   mais l’épreuve était principalement basé sur le binaire KeePass et je  ne pense pas qu’il y a des choses intéressantes à en tirer (peut-être  que je me trompe, n’hésitez pas à me dire si vous avez trouvé des choses  sympa ^_^).
-Dans un dump plus complet, de multiples informations sont souvent  disponibles. On peut par exemple citer des mots de passe (stockés dans  la base de registre), des processus intéressant à analyser  (firefox.exe), etc.
-N’hésitez pas à commenter l’article si vous souhaitez que j’ajoute  certaines commandes qui vous paraissent utiles et qui ont été omises.
-Pour finir, si vous souhaitez vous amuser, le Wargame est disponible à l’adresse suivante : http://wargame2k12.nuitduhack.com/
-Bonne analyse à tous.
-PS : je lis actuellement le livre « Practical Malware Analysis » et je le trouve vraiment très sympa. Je le recommande à tous.
-
 
 
 ## retrouver le nom d'une machine (et fouiller dans la registry):

@@ -13,5 +13,5 @@ $name = "c:\test\${name}.pcap"
 ## packet monitor
 
 ```powershell
-pktmon
+PktMon.exe
 ```
