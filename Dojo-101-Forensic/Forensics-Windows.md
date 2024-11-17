@@ -1,6 +1,37 @@
-# Logs Windows Event:
+# Forensic Windows
 
-## Event ID
+## Collecte d'artefact Windows
+
+* [FASTIR](https://github.com/SekoiaLab/Fastir_Collector)
+
+* [FIR](https://github.com/certsocietegenerale/FIR)
+
+## Dump de la RAM
+
+* [Winpmem](https://github.com/Velocidex/c-aff4/releases) Compatible avec Volatility.
+
+```powershell
+C:\winpmem_v3.3.rc3.exe --output memdump.raw --format raw --volume_format raw
+```
+
+* `Dumpit.exe`
+
+* `NotMyFault.exe` 
+
+* `Windows` : système -> avancé -> sauvegarde et restauration -> vidage de la RAM
+
+* [process hacker](https://processhacker.sourceforge.io/) On peut visualiser les process mais aussi directement lire les strings en ram etc : `click droit sur le process -> proprietés -> memory -> strings`
+
+* `Sysinternals: procdump` 
+
+```powershell
+C:\Users\Chase\Documents>.\procdump.exe -accepteula -ma <pid> 
+.\procdump.exe -accepteula -ma 6800
+```
+
+## Logs Windows Event:
+
+### Event ID
 
 | Id | Description  | Log Name |
 |----|--------------|----------|
@@ -16,7 +47,7 @@
 | 7045 | Service Creation | System |
  
  
-## Logon Types
+### Logon Types
 
  | type | title | Description |
  |--|--|--|
@@ -26,5 +57,24 @@
  | 5 | Service | A service was started by the Service Control Manager.|
  | 7 |  Unlock |  This workstation was unlocked.|
  | 8 | NetworkCleartext | A user logged on to this computer from the network. The user’s password was passed to the authentication package in its unhashed form. The built-in authentication packages all hash credentials before sending them across the network. The credentials do not traverse the network in plaintext (also called cleartext).|
+
+
+## Windows Sniffing
+
+### wireshark in background
+
+```powershell
+stop-Process -name tshark
+cd 'C:\Program Files\Wireshark'
+$name = (new-guid).ToString()
+$name = "c:\test\${name}.pcap"
+.\tshark.exe -i "Wi-fi" -w $name
+```
+
+### packet monitor
+
+```powershell
+PktMon.exe
+```
 
 

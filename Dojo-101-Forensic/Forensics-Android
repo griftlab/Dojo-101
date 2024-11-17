@@ -6,11 +6,12 @@
 
 * [MVT Mobile Verification Toolkit](https://github.com/mvt-project/mvt)
 
-* [TEHTRIS MTD Legacy](https://play.google.com/store/apps/details?id=com.tehtris.egambit.enterprise)
+* [ALEAPP](https://github.com/abrignoni/ALEAPP)
+
 
 ## Android mode Dev + debug USB
 
-1. `Paramètres` -> `à propos du téléphone` -> `Numéro de build` * 4
+1. `Paramètres` -> `à propos du téléphone` -> `Numéro de build`*4
 
 2. `Paramètres` -> `Systèmes` -> `Optins pour les développeurs` -> `Debogage USB`
 
@@ -63,6 +64,12 @@ Arrêt du serveur adb :
 .\adb.exe kill-server
 ```
 
+Lister les permissions
+
+```powershell
+.\adb.exe shell "dumpsys package packagename | grep permission"
+```
+
 ## Backup pour comparaison aux Iocs
 
 ### Via une appli tierce
@@ -85,11 +92,17 @@ adb backup -nocompress -all
 
 ### Extraction des backups
 
-* [ABE](https://github.com/nelenkov/android-backup-extractor)
-* [AB Decrypt](https://github.com/joernheissler/ab-decrypt)
+* via [ABE](https://github.com/nelenkov/android-backup-extractor) : 
 
-ou via l'outil `MVT` : `mvt-android check-backup --output /path/to/results/ /path/to/backup.ab`
+```powershell
+java -jar .\abe-3e9a273.jar unpack .\backup.ab backup.tar
+```
 
+* via l'outil `MVT` :
+
+```sh
+mvt-android check-backup --output /path/to/results/ /path/to/backup.ab`
+```
 
 ## Recherche d'IoCs
 
@@ -99,7 +112,12 @@ mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
 
 ## Analyse des applications
 
-Peut se faire localement avec `Google Play Protect`
+* Peut se faire localement avec `Google Play Protect` depuis le Play Store
+
+* Revue des permissions localement via `Paramètres` -> `Applications`, mieux vaut privilegier adb.
+
+* Signatures des Apps ou Fichiers suspects : `VirusTotal`
+
 
 ## Compte google
 
