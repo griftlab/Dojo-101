@@ -8,6 +8,30 @@
 
 * [ALEAPP](https://github.com/abrignoni/ALEAPP)
 
+## Structure du Système de fichier
+
+| Chemin | Description |
+|--------|-------------|
+| /system | system et applications pré-installées|
+| /data | données utilisateurs, dont contact et messages |
+| /sdcard | données externe ou internes, fichiers multimedia et documents |
+| /cache| Fichiers temporaires |
+| /data/data/com.android.providers.settings/databases/settings.db | secrets, dont salt |
+| /data/system/password.key | secret lockScreen |
+
+## Procedure
+
+Device allumé avec connaissance des Credentials
+
+1. Mode avions, désactivation Wifi et Bluetooth
+
+2. Activation du deboggage USB
+
+4. Etendre le Lock Timeaout
+
+5. Collecter les identifiants
+
+6. Transport au Lab
 
 ## Android mode Dev + debug USB
 
@@ -17,14 +41,14 @@
 
 ## Adb
 
-lancement du serveur adb : 
+### lancement du serveur adb : 
 
 ```powershell
 .\adb.exe version
 .\adb.exe start-server
 ```
 
-lister les devices
+### devices
 
 ```powershell
 .\adb.exe devices
@@ -34,49 +58,115 @@ lister les devices
 
 Si `unauthorized`, autorisation sur le téléphone à valider
 
-parcourir les fichiers
+### Dump Système
+
+```powershell
+.\adb.exe shell dumpsys > Dumpsys.txt
+```
+
+### processus
+
+```powershell
+.\adb.exe shell ps > ps.txt
+```
+
+### Logs
+
+```powershell
+.\adb.exe shell logcat -d > Logs.txt
+.\adb.exe shell logcat 
+```
+
+### packages
+
+```powershell
+.\adb.exe shell pm list packages
+.\adb.exe shell pm list packages -f > packages.txt
+```
+
+### permissions
+
+```powershell
+.\adb.exe shell pm list permissions > permissions.txt
+.\adb.exe shell "dumpsys package packagename | grep permission"
+```
+
+### contacts
+
+```powershell
+.\adb.exe shell content query --uri content://com.android.contacts/contacts > contact.txt
+```
+
+### SMS/MMS :
+
+```powershell
+.\adb.exe shell content query --uri content://sms > sms.txt
+.\adb.exe shell content query --uri content://mms > mms.txt
+```
+
+### montage
+
+```powershell
+.\adb.exe shell mount
+.\adb.exe shell ls /mnt
+```
+
+### Réseaux
+
+```powershell
+.\adb.exe shell dumpsys connectivity
+.\adb.exe shell dumpsys telephony.registry
+```
+
+### parcourir les fichiers
 
 ```powershell
 .\adb.exe shell ls /
 ```
 
-Pull / Push de fichiers
+### Pull / Push de fichiers
+
+exemple avec un téléchargement d'APK
 
 ```powershell
-.\adb.exe <push|pull> <source> <destination>
+.\adb.exe pull /data/app/chemin/base.apk base.apk
 ```
 
-Lire les Logs
+### Verifier l'absence de rootage
 
 ```powershell
-.\adb.exe logcat -d > Logs.txt
+.\adb.exe root
+.\adb.exe shell id
+.\adb.exe shell su
+.\adb.exe shell "su -c whoami"
 ```
 
-Lister les packages
+### Fastboot pour vérifier le `secure boot` et autres informations
 
-```powershell
-.\adb.exe shell pm list packages
+```sh
+adb reboot bootloader
+fastboot oem device-info
+fastboot reboot
 ```
 
-Arrêt du serveur adb : 
+
+
+### Arrêt du serveur adb : 
 
 ```powershell
 .\adb.exe kill-server
 ```
 
-Lister les permissions
-
-```powershell
-.\adb.exe shell "dumpsys package packagename | grep permission"
-```
 
 ## Backup pour comparaison aux Iocs
 
-### Via une appli tierce
+### Via Google
 
-ex: Backup Local ou Cloud
+`Paramètres` -> `Système` -> `Sauvegarde`, ensuite visible sur [Google](https://drive.google.com/drive/backups)
 
 ### Via adb
+
+> Ce type de backup est déprecié par Google.
 
 Backup des SMS
 
@@ -124,3 +214,8 @@ mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
 * [google security checkup](myaccount.google.com/security-checkup)
 
 * [Support Google](https://support.google.com/accounts/answer/6294825?)
+
+## WhatsApp
+
+* `wa.db` et `msgstore.db` : `/data/data/com.whatsapp/`  
+* Shared Files : `/mnt/sdcard/WhatsApp/.Share/`

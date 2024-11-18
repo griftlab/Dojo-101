@@ -26,7 +26,7 @@
 
 3. Déchiffrement ou récupération de la clé de chiffrement
 
-4. Arrêt et copie du disque
+4. Arrêt et copie du disque au Lab
 
 ## Si la machine est éteinte
 
