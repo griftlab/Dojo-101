@@ -12,12 +12,12 @@
 
 | Chemin | Description |
 |--------|-------------|
-| /system | system et applications pré-installées|
+| /system | system et applications préinstallées|
 | /data | données utilisateurs, dont contact et messages |
-| /sdcard | données externe ou internes, fichiers multimedia et documents |
-| /cache| Fichiers temporaires |
-| /data/data/com.android.providers.settings/databases/settings.db | secrets, dont salt |
-| /data/system/password.key | secret lockScreen |
+| /sdcard | données externes ou internes, fichiers multimédias et documents |
+| /cache | Fichiers temporaires |
+| /data | Données des Applications |
+
 
 ## Procedure
 
@@ -25,9 +25,9 @@ Device allumé avec connaissance des Credentials
 
 1. Mode avions, désactivation Wifi et Bluetooth
 
-2. Activation du deboggage USB
+2. Activation du débogage USB
 
-4. Etendre le Lock Timeaout
+4. Étendre le Lock Timeaout
 
 5. Collecter les identifiants
 
@@ -135,7 +135,7 @@ téléchargement des documents utilisateur
 ```
 
 
-### Verifier l'absence de rootage
+### Vérifier l'absence de rootage
 
 ```powershell
 .\adb.exe root
@@ -169,7 +169,7 @@ fastboot reboot
 
 ### Via adb
 
-> Ce type de backup est déprecié par Google.
+> Ce type de backup est déprécié par Google.
 
 Backup des SMS
 
@@ -201,7 +201,7 @@ mvt-android check-backup --output /path/to/results/ /path/to/backup.ab`
 
 * Peut se faire localement avec `Google Play Protect` depuis le Play Store
 
-* Revue des permissions localement via `Paramètres` -> `Applications` et `Paramètres` -> `Sécurité et Confidentialité`, mieux vaut privilegier `adb`.
+* Revue des permissions localement via `Paramètres` -> `Applications` et `Paramètres` -> `Sécurité et Confidentialité`, mieux vaut privilégier `adb`.
 
 * Signatures des Apps ou Fichiers suspects : à mettre sur `VirusTotal` une fois l'APK téléchargée via `adb`
 
@@ -219,10 +219,7 @@ mvt-android check-backup --output /path/to/results/ /path/to/backup.ab`
 
 ## Pour aller plus loin
 
-### WhatsApp
 
-* `wa.db` et `msgstore.db` : `/data/data/com.whatsapp/`  
-* Shared Files : `/mnt/sdcard/WhatsApp/.Share/`
 
 ### Recherche d'IoCs
 
@@ -234,7 +231,7 @@ mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
 
 ### Misc
 
-from [@PraveenAdithya](https://github.com/PraveenAdithya/Android-Forensics-Cheatsheet)
+from [@PraveenAdithya](https://github.com/PraveenAdithya/Android-Forensics-Cheatsheet) et complété
 
 ```txt
 Android-Forensics-Cheatsheet
@@ -278,4 +275,15 @@ Android forensic artifacts cheat sheet :
 /data/datacom.instagram.android/shared_prefs/com.instagram.android_preferences.xml - Instagram -User ID,Username,account type,user account accesstime, biography, profile photo
 
 /data/datacom.instagram.android/shared_prefs/_userBootstrapService.xml - Instagrams followers,following, close friends list
+
+/data/data/com.android.providers.settings/databases/settings.db - secrets, dont salt
+
+/data/system/password.key -	secret lockScreen
+
+/data/data/com.android.chrome/databases/webview.db - Chrome history
+
+/data/data/com.whatsapp/ - wa.db et msgstore.db contient les messages WhattsAp
+
+/mnt/sdcard/WhatsApp/.Share/ - Fichiers partagés WhattsApp
+
 ```
