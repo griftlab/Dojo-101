@@ -77,6 +77,8 @@ Si `unauthorized`, autorisation sur le téléphone à valider
 .\adb.exe shell logcat 
 ```
 
+Pour spécifier une date `adb logcat -d -T "2024-11-29 16:00:00.000"`
+
 ### packages
 
 ```powershell
@@ -124,13 +126,14 @@ Si `unauthorized`, autorisation sur le téléphone à valider
 .\adb.exe shell ls /
 ```
 
-### Pull / Push de fichiers
+### Pull de fichiers
 
-exemple avec un téléchargement d'APK
+téléchargement des documents utilisateur
 
 ```powershell
-.\adb.exe pull /data/app/chemin/base.apk base.apk
+.\adb.exe pull /sdcard sdcard
 ```
+
 
 ### Verifier l'absence de rootage
 
@@ -194,19 +197,17 @@ java -jar .\abe-3e9a273.jar unpack .\backup.ab backup.tar
 mvt-android check-backup --output /path/to/results/ /path/to/backup.ab`
 ```
 
-## Recherche d'IoCs
-
-```sh
-mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
-```
-
 ## Analyse des applications
 
 * Peut se faire localement avec `Google Play Protect` depuis le Play Store
 
-* Revue des permissions localement via `Paramètres` -> `Applications`, mieux vaut privilegier adb.
+* Revue des permissions localement via `Paramètres` -> `Applications` et `Paramètres` -> `Sécurité et Confidentialité`, mieux vaut privilegier `adb`.
 
-* Signatures des Apps ou Fichiers suspects : `VirusTotal`
+* Signatures des Apps ou Fichiers suspects : à mettre sur `VirusTotal` une fois l'APK téléchargée via `adb`
+
+```powershell
+.\adb.exe pull /data/app/chemin/base.apk base.apk
+```
 
 
 ## Compte google
@@ -215,7 +216,66 @@ mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
 
 * [Support Google](https://support.google.com/accounts/answer/6294825?)
 
-## WhatsApp
+
+## Pour aller plus loin
+
+### WhatsApp
 
 * `wa.db` et `msgstore.db` : `/data/data/com.whatsapp/`  
 * Shared Files : `/mnt/sdcard/WhatsApp/.Share/`
+
+### Recherche d'IoCs
+
+Lorsqu'on sait ce que l'on cherche, trouver les IoCs Correspondants
+
+```sh
+mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
+```
+
+### Misc
+
+from [@PraveenAdithya](https://github.com/PraveenAdithya/Android-Forensics-Cheatsheet)
+
+```txt
+Android-Forensics-Cheatsheet
+
+Android forensic artifacts cheat sheet :
+
+.\data\system\users%USERNUMBER%\settings_secure.xml - Android ID, Bluetooth name, Bluetooth address
+
+..\data\system\usagestats%USERNUMBER%\version - OS version, Build codename, Build version
+
+..\data\drm\pvt\ahrh - IMEI
+
+..\data\user_de%USERNUMBER%\com.android.providers.telephony\databases\telephony.db - Display name, ICCID, IMSI, Country (SIM card details)
+
+..\data\misc\bootstat\factory_reset - Factory reset time (UTC)
+
+..\data\misc\bootstat\last_boot_time_utc - Last boot time (UTC)
+
+..\data\misc\adb\adb_keys. - host connects to the device through adb.
+
+..\data\system_ce%USERNUMBER%\accounts_ce.db - users’ application account details, including login credentials, account IDs, authentication tokens, and more
+
+..\data\system_de%USERNUMBER%\accounts_de.db - users’ application account details, including login credentials, account IDs, authentication tokens, and more
+
+..\data\user%USERNUMBER%\com.google.android.apps.turbo\shared_prefs\app_usage_stats.xml - hardware and software usage statistics.
+
+.\data\data\com.google.android.apps.wellbeing\databases\app_usage - Digital Wellbeing service that collects usage statistic
+
+..\data\data\com.samsung.android.forest\databases\dwbCommon.db - Digital Wellbeing service Samsung
+
+.\data\data\com.android.vending\databases\frosting.db - application is installed or updated
+
+..\data\data\com.android.vending\databases\suggestions.db - Google Play Store searches
+
+..\data\data\com.WhatsApp\databases\msgstore.db - WhatsApp stores account data
+
+..\data\data\com.WhatsApp\files - WhatsApp encrypts and decrypts database backups with a key
+
+..\Android\media\com.whatsapp\WhatsApp\Media. - WhatsApp Media files
+
+/data/datacom.instagram.android/shared_prefs/com.instagram.android_preferences.xml - Instagram -User ID,Username,account type,user account accesstime, biography, profile photo
+
+/data/datacom.instagram.android/shared_prefs/_userBootstrapService.xml - Instagrams followers,following, close friends list
+```
