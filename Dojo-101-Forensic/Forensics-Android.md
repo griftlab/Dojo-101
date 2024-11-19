@@ -66,7 +66,7 @@ Si `unauthorized`, autorisation sur le téléphone à valider (notification)
 .\adb.exe shell dumpsys > Artefacts/Dumpsys.txt
 ```
 
-### processus
+### Processus
 
 ```powershell
 .\adb.exe shell ps > Artefacts/ps.txt
@@ -82,20 +82,20 @@ Si `unauthorized`, autorisation sur le téléphone à valider (notification)
 
 Pour spécifier une date `.\adb.exe logcat -d -T "2024-11-29 16:00:00.000"`
 
-### packages
+### Packages
 
 ```powershell
 .\adb.exe shell pm list packages -f > .\Artefacts\packages.txt
 ```
 
-### permissions
+### Permissions
 
 ```powershell
 .\adb.exe shell pm list permissions > .\Artefacts\permissions.txt
 .\adb.exe shell "dumpsys package packagename | grep permission"
 ```
 
-### contacts
+### Contacts
 
 ```powershell
 .\adb.exe shell content query --uri content://com.android.contacts/contacts > .\Artefacts\contact.txt
@@ -117,7 +117,7 @@ téléchargement des documents utilisateur
 .\adb.exe pull /sdcard Artefacts/sdcard
 ```
 
-### montage
+### Montage
 
 Vérifier notament la présence
 
@@ -132,6 +132,14 @@ Vérifier notament la présence
 .\adb.exe shell dumpsys wifi > .\Artefacts\Wifi.txt
 .\adb.exe shell dumpsys telephony.registry > Artefacts/telephony.txt
 .\adb.exe shell dumpsys bluetooth_manager > .\Artefacts\bluetooth.txt
+```
+
+### Backup
+
+> Ce type de backup est déprécié par Google.
+
+```powershell
+.\adb.exe backup -apk -shared -all -system -f backup.ab
 ```
 
 
@@ -152,7 +160,7 @@ Vérifier notament la présence
 .\fastboot.exe reboot
 ```
 
-### parcourir les fichiers manuellement
+### Parcourir les fichiers manuellement
 
 ```powershell
 .\adb.exe shell ls /
@@ -188,28 +196,33 @@ Vérifier notament la présence
 
 ## Pour aller plus loin, en cas d'élements probants
 
-## Backup
+## Autres solutions de Backup
 
 ### Via Google
 
 `Paramètres` -> `Système` -> `Sauvegarde`, ensuite visible sur [Google](https://drive.google.com/drive/backups)
 
-### Via adb
 
-> Ce type de backup est déprécié par Google.
+### Via bu 
 
-Backup complète
-
-```sh
-adb backup -nocompress -all
+```powershell
+.\adb.exe shell 'bu backup -apk -all' > BUbackup.adb
 ```
 
-### Extraction des backups
+
+
+### Extraction des backups adb
 
 * via [ABE](https://github.com/nelenkov/android-backup-extractor) : 
 
 ```powershell
 java -jar .\abe-3e9a273.jar unpack .\backup.ab backup.tar
+```
+
+* via dd
+
+```sh
+dd if=myAndroidBackup.ab bs=4K iflag=skip_bytes skip=24 | openssl zlib -d > myAndroidBackup.tar
 ```
 
 * via l'outil `MVT` :
@@ -282,6 +295,8 @@ Android forensic artifacts cheat sheet :
 
 /data/data/com.whatsapp/ - wa.db et msgstore.db contient les messages WhattsAp
 
-/Artefacts/sdcard/Android/media/com.whatsapp/WhatsApp - Fichiers partagés WhattsApp et wa.db et msgstore.db
+/sdcard/Android/media/com.whatsapp/WhatsApp - Fichiers partagés WhattsApp et wa.db et msgstore.db
+
+Backup/apps/com.android.launcher3 - Historique de luncher dans des fichiers de log
 
 ```
