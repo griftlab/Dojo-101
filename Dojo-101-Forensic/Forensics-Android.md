@@ -165,6 +165,28 @@ Vérifier notament la présence
 .\adb.exe kill-server
 ```
 
+## Analyse des applications suspectes
+
+* Peut se faire localement avec `Google Play Protect` depuis le Play Store
+
+* Revue des permissions localement via `Paramètres` -> `Applications` et `Paramètres` -> `Sécurité et Confidentialité`, mieux vaut privilégier `adb`.
+
+* Signatures des Apps ou Fichiers suspects : à mettre sur `VirusTotal` une fois l'APK téléchargée via `adb`
+
+```powershell
+.\adb.exe pull /data/app/chemin/base.apk base.apk
+```
+
+
+## Compte google
+
+* [google security checkup](myaccount.google.com/security-checkup)
+
+* [Support Google](https://support.google.com/accounts/answer/6294825?)
+
+
+
+## Pour aller plus loin, en cas d'élements probants
 
 ## Backup
 
@@ -195,29 +217,6 @@ java -jar .\abe-3e9a273.jar unpack .\backup.ab backup.tar
 ```sh
 mvt-android check-backup --output /path/to/results/ /path/to/backup.ab`
 ```
-
-## Analyse des applications
-
-* Peut se faire localement avec `Google Play Protect` depuis le Play Store
-
-* Revue des permissions localement via `Paramètres` -> `Applications` et `Paramètres` -> `Sécurité et Confidentialité`, mieux vaut privilégier `adb`.
-
-* Signatures des Apps ou Fichiers suspects : à mettre sur `VirusTotal` une fois l'APK téléchargée via `adb`
-
-```powershell
-.\adb.exe pull /data/app/chemin/base.apk base.apk
-```
-
-
-## Compte google
-
-* [google security checkup](myaccount.google.com/security-checkup)
-
-* [Support Google](https://support.google.com/accounts/answer/6294825?)
-
-
-## Pour aller plus loin
-
 
 
 ### Recherche d'IoCs
