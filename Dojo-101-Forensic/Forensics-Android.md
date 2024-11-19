@@ -21,7 +21,7 @@
 
 ## Procedure
 
-Device allumé avec connaissance des Credentials
+### Device allumé avec connaissance des Credentials
 
 1. Mode avions, désactivation Wifi et Bluetooth
 
@@ -31,13 +31,15 @@ Device allumé avec connaissance des Credentials
 
 5. Collecter les identifiants
 
-6. Transport au Lab
+6. Transport au Lab (NE PAS etiendre)
+
 
 ## Android mode Dev + debug USB
 
 1. `Paramètres` -> `à propos du téléphone` -> `Numéro de build`*4
 
 2. `Paramètres` -> `Systèmes` -> `Optins pour les développeurs` -> `Debogage USB`
+
 
 ## Adb
 
@@ -56,57 +58,68 @@ Device allumé avec connaissance des Credentials
 .\adb.exe get-state
 ```
 
-Si `unauthorized`, autorisation sur le téléphone à valider
+Si `unauthorized`, autorisation sur le téléphone à valider (notification)
 
 ### Dump Système
 
 ```powershell
-.\adb.exe shell dumpsys > Dumpsys.txt
+.\adb.exe shell dumpsys > Artefacts/Dumpsys.txt
 ```
 
 ### processus
 
 ```powershell
-.\adb.exe shell ps > ps.txt
+.\adb.exe shell ps > Artefacts/ps.txt
 ```
 
 ### Logs
 
 ```powershell
-.\adb.exe shell logcat -d > Logs.txt
-.\adb.exe shell logcat 
+.\adb.exe logcat -G 1M
+.\adb.exe logcat -g
+.\adb.exe logcat *:V -d -T "2023-01-01 10:30:00.000" > .\Artefacts\log.txt
 ```
 
-Pour spécifier une date `adb logcat -d -T "2024-11-29 16:00:00.000"`
+Pour spécifier une date `.\adb.exe logcat -d -T "2024-11-29 16:00:00.000"`
 
 ### packages
 
 ```powershell
-.\adb.exe shell pm list packages
-.\adb.exe shell pm list packages -f > packages.txt
+.\adb.exe shell pm list packages -f > .\Artefacts\packages.txt
 ```
 
 ### permissions
 
 ```powershell
-.\adb.exe shell pm list permissions > permissions.txt
+.\adb.exe shell pm list permissions > .\Artefacts\permissions.txt
 .\adb.exe shell "dumpsys package packagename | grep permission"
 ```
 
 ### contacts
 
 ```powershell
-.\adb.exe shell content query --uri content://com.android.contacts/contacts > contact.txt
+.\adb.exe shell content query --uri content://com.android.contacts/contacts > .\Artefacts\contact.txt
 ```
 
 ### SMS/MMS :
 
 ```powershell
-.\adb.exe shell content query --uri content://sms > sms.txt
-.\adb.exe shell content query --uri content://mms > mms.txt
+.\adb.exe shell content query --uri content://sms > .\Artefacts\sms.txt
+.\adb.exe shell content query --uri content://mms > .\Artefacts\mms.txt
+```
+
+### Pull de fichiers
+
+téléchargement des documents utilisateur
+
+```powershell
+.\adb.exe pull /storage/emulated/ Artefacts/storage
+.\adb.exe pull /sdcard Artefacts/sdcard
 ```
 
 ### montage
+
+Vérifier notament la présence
 
 ```powershell
 .\adb.exe shell mount
@@ -116,22 +129,9 @@ Pour spécifier une date `adb logcat -d -T "2024-11-29 16:00:00.000"`
 ### Réseaux
 
 ```powershell
-.\adb.exe shell dumpsys connectivity
-.\adb.exe shell dumpsys telephony.registry
-```
-
-### parcourir les fichiers
-
-```powershell
-.\adb.exe shell ls /
-```
-
-### Pull de fichiers
-
-téléchargement des documents utilisateur
-
-```powershell
-.\adb.exe pull /sdcard sdcard
+.\adb.exe shell dumpsys wifi > .\Artefacts\Wifi.txt
+.\adb.exe shell dumpsys telephony.registry > Artefacts/telephony.txt
+.\adb.exe shell dumpsys bluetooth_manager > .\Artefacts\bluetooth.txt
 ```
 
 
@@ -146,12 +146,17 @@ téléchargement des documents utilisateur
 
 ### Fastboot pour vérifier le `secure boot` et autres informations
 
-```sh
-adb reboot bootloader
-fastboot oem device-info
-fastboot reboot
+```powershell
+.\adb.exe reboot bootloader
+.\fastboot.exe oem device-info
+.\fastboot.exe reboot
 ```
 
+### parcourir les fichiers manuellement
+
+```powershell
+.\adb.exe shell ls /
+```
 
 
 ### Arrêt du serveur adb : 
@@ -161,7 +166,7 @@ fastboot reboot
 ```
 
 
-## Backup pour comparaison aux Iocs
+## Backup
 
 ### Via Google
 
@@ -170,12 +175,6 @@ fastboot reboot
 ### Via adb
 
 > Ce type de backup est déprécié par Google.
-
-Backup des SMS
-
-```sh
-adb backup -nocompress com.android.providers.telephony
-```
 
 Backup complète
 
@@ -284,6 +283,6 @@ Android forensic artifacts cheat sheet :
 
 /data/data/com.whatsapp/ - wa.db et msgstore.db contient les messages WhattsAp
 
-/mnt/sdcard/WhatsApp/.Share/ - Fichiers partagés WhattsApp
+/Artefacts/sdcard/Android/media/com.whatsapp/WhatsApp - Fichiers partagés WhattsApp et wa.db et msgstore.db
 
 ```
