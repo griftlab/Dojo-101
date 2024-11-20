@@ -42,4 +42,11 @@
 
 * **Device to File (image)** : This can be performed by generating one or more files that contain, linked together, an identical copy of the original device. The most widespread is `dd` (`raw`) or `E01` formats
 
+## Ajouter le timestamp au prompt : 
 
+```powershell
+function prompt {
+    $timestamp = Get-Date -Format "yyyy-MM-ddTHH:mm:ss"
+    "$timestamp PS > "
+}
+```

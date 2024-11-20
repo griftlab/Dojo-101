@@ -43,6 +43,8 @@
 
 ## Adb
 
+Avant la collecte d'artefact, penser à **ajouter le timestamp au prompt**
+
 ### lancement du serveur adb : 
 
 ```powershell
@@ -54,7 +56,7 @@
 
 ```powershell
 .\adb.exe devices
-.\adb.exe get-serialno
+.\adb.exe get-serialno > Artefacts/serialNo.txt
 .\adb.exe get-state
 ```
 
@@ -75,8 +77,8 @@ Si `unauthorized`, autorisation sur le téléphone à valider (notification)
 ### Logs
 
 ```powershell
-.\adb.exe logcat -G 1M
-.\adb.exe logcat -g
+#.\adb.exe logcat -G 1M
+#.\adb.exe logcat -g
 .\adb.exe logcat *:V -d -T "2023-01-01 10:30:00.000" > .\Artefacts\log.txt
 ```
 
@@ -92,7 +94,7 @@ Pour spécifier une date `.\adb.exe logcat -d -T "2024-11-29 16:00:00.000"`
 
 ```powershell
 .\adb.exe shell pm list permissions > .\Artefacts\permissions.txt
-.\adb.exe shell "dumpsys package packagename | grep permission"
+.\adb.exe shell "dumpsys package packagename | grep permission" > .\Artefacts\DumpsysPermissions.txt
 ```
 
 ### Contacts
@@ -152,7 +154,10 @@ Vérifier notament la présence
 .\adb.exe shell "su -c whoami"
 ```
 
-### Fastboot pour vérifier le `secure boot` et autres informations
+### Fastboot 
+
+* vérifier le `secure boot` : yes
+* vérifier le `Device state` : locked
 
 ```powershell
 .\adb.exe reboot bootloader
