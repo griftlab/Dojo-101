@@ -6,6 +6,18 @@
 
 * [FIR](https://github.com/certsocietegenerale/FIR)
 
+éléments d'interet : 
+
+* Journaux d’événement Windows (EVTX),
+
+* Ruches de la base de registre,
+
+* Logs d’anti-virus,
+
+* Logs de pare-feu,
+
+* Recherche d’Email suspect avec pièce jointe.
+
 ## Dump de la RAM
 
 * [Winpmem](https://github.com/Velocidex/c-aff4/releases) Compatible avec Volatility.
