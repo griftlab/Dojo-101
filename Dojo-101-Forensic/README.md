@@ -20,7 +20,7 @@
 
 2. Après collecte, toujours travailler sur les copies
 
-## Si la machine allumée
+## Si la machine est allumée
 
 1. Isolation réseau
 
@@ -44,8 +44,7 @@
 
 * Interopérabilité des formats pour exploitation ultérieure (statique, dynamique, virtualisation),
 
-* Admissibilité judiciaire, force probatoire et traçabilité (rapport
-de copie, hash).
+* Admissibilité judiciaire, force probatoire et traçabilité (rapportde copie, hash).
 
 * **Device to Device (clone)** : This can be performed by obtaining an exact bit-by-bit replica of an original device in another - previously wiped - device with equal or greater capacity.
 
@@ -55,7 +54,7 @@ de copie, hash).
 
 * à défaut de copie physique : Privilégier un format interopérable `AD1`.
 
-## à défaut de copie : collecte d'artefacts (souche)
+## à défaut de copie : collecte d'artefacts (souches)
 
 * Toujours mentionner les emplacements physiques / logiques des éléments découverts.
 
