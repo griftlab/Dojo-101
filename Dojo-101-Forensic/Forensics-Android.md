@@ -8,6 +8,8 @@
 
 * [ALEAPP](https://github.com/abrignoni/ALEAPP)
 
+* [Android Triage](https://github.com/RealityNet/android_triage)
+
 ## Structure du Système de fichier
 
 | Chemin | Description |
@@ -79,7 +81,7 @@ Si `unauthorized`, autorisation sur le téléphone à valider (notification)
 ```powershell
 #.\adb.exe logcat -G 1M
 #.\adb.exe logcat -g
-.\adb.exe logcat *:V -d -T "2023-01-01 10:30:00.000" > .\Artefacts\log.txt
+.\adb.exe logcat -d -b all V:* > .\Artefacts\log.txt
 ```
 
 Pour spécifier une date `.\adb.exe logcat -d -T "2024-11-29 16:00:00.000"`
@@ -101,13 +103,15 @@ Pour spécifier une date `.\adb.exe logcat -d -T "2024-11-29 16:00:00.000"`
 
 ```powershell
 .\adb.exe shell content query --uri content://com.android.contacts/contacts > .\Artefacts\contact.txt
+.\adb.exe shell content query --uri content://contacts/phones > .\Artefacts\phone.txt
 ```
 
-### SMS/MMS :
+### Appels/SMS/MMS :
 
 ```powershell
 .\adb.exe shell content query --uri content://sms > .\Artefacts\sms.txt
 .\adb.exe shell content query --uri content://mms > .\Artefacts\mms.txt
+.\adb.exe shell content query --uri content://call_log/calls > .\Artefacts\calls.txt
 ```
 
 ### Pull de fichiers
@@ -131,17 +135,26 @@ Vérifier notament la présence
 ### Réseaux
 
 ```powershell
+.\adb.exe shell netstat -a > .\Artefacts\netstat.txt
 .\adb.exe shell dumpsys wifi > .\Artefacts\Wifi.txt
 .\adb.exe shell dumpsys telephony.registry > Artefacts/telephony.txt
 .\adb.exe shell dumpsys bluetooth_manager > .\Artefacts\bluetooth.txt
 ```
+
+### Configuration
+
+```powershell
+.\adb.exe shell content query --uri content://settings/secure/ > .\Artefacts\secure.txt
+.\adb.exe shell content query --uri content://settings/global > .\Artefacts\global.txt
+```
+
 
 ### Backup
 
 > Ce type de backup est déprécié par Google.
 
 ```powershell
-.\adb.exe backup -apk -shared -all -system -f backup.ab
+.\adb.exe backup -all -shared -system -keyvalue -apk -obb -f .\Artefacts\backup.ab
 ```
 
 
@@ -243,6 +256,12 @@ Lorsqu'on sait ce que l'on cherche, trouver les IoCs Correspondants
 
 ```sh
 mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
+```
+
+### Web
+
+```powershell
+ .\adb.exe shell content query --uri content://com.android.chrome.browser/history
 ```
 
 ### Misc
