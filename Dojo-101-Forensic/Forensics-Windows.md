@@ -6,6 +6,8 @@
 
 * [FIR](https://github.com/certsocietegenerale/FIR)
 
+* [KAPE](https://www.kroll.com/en/insights/publications/cyber/kroll-artifact-parser-extractor-kape)
+
 éléments d'interet : 
 
 * Journaux d’événement Windows (EVTX),
