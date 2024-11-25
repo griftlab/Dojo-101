@@ -11,7 +11,7 @@ Dojo-101 is a project for capturing experience and knowledge in cybersecurity.
 
 Usable offline with a simple text editor, its purpose is to freely share knowledge.
 
-> ⚠️ [This repository, together with its tools, is provided by Taisen-Solutions on an “as is” basis. Taisen-Solutions makes no representations or warranties of any kind, express or implied, as to the operation of the information, content, materials, tools, services and/or products included on the repository. Taisen-Solution disclaims, to the full extent permissible by applicable law, all warranties, express or implied, including but not limited to, implied warranties of merchantability and fitness for a particular purpose. Before using, please read the project’s disclaimer](./CODE_OF_CONDUCT.md)
+> ⚠️ This repository, together with its tools, is provided by Taisen-Solutions on an “as is” basis. Taisen-Solutions makes no representations or warranties of any kind, express or implied, as to the operation of the information, content, materials, tools, services and/or products included on the repository. Taisen-Solution disclaims, to the full extent permissible by applicable law, all warranties, express or implied, including but not limited to, implied warranties of merchantability and fitness for a particular purpose. Before using, please read the project’s disclaimer
 
 
 ## ⚔️ Themes
@@ -21,7 +21,6 @@ Usable offline with a simple text editor, its purpose is to freely share knowled
 * [Pentest](https://github.com/Aif4thah/Dojo-101/tree/main/Dojo-101-Pentest)
 * [Forensic](https://github.com/Aif4thah/Dojo-101/tree/main/Dojo-101-Forensic)
 * [Radio frequencies](https://github.com/Aif4thah/Dojo-101/tree/main/Dojo-101-RF)
-
 
 ## 👉 Let’s get started!
 
