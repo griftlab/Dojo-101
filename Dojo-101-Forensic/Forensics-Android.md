@@ -264,6 +264,15 @@ mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
  .\adb.exe shell content query --uri content://com.android.chrome.browser/history
 ```
 
+### CodeS IHM
+
+Redirection d'appel : `*#21#`
+
+Appel en absence : `*#62#` 
+
+> Pour info, à ne pas faire en forensic : désactiver les redirection :  #002# 
+
+
 ### Misc
 
 from [@PraveenAdithya](https://github.com/PraveenAdithya/Android-Forensics-Cheatsheet) et complété
