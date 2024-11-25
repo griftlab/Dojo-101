@@ -1,15 +1,4 @@
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-## Les fondamentaux de la cybersécurité
-
-* Sensibilisation proposée par [Taisen-Solutions](https://taisen.fr)
-
-* Support sous [License: GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)
-
-* Ce contenu fait partie des `Basics` du projet [DOJO-101](https://github.com/Aif4thah/Dojo-101/)
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+# Les fondamentaux de la cybersécurité (basics)
 
 ## Introduction
 
@@ -19,7 +8,7 @@ Depuis ce chiffre est en constante augmentation...
 
 Les enjeux ne sont pas seulement financiers : les emplois, l’image et la stabilité de l’entreprise dépendent de la sécurité de ses actifs.
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Les attaques les plus courantes:
 
@@ -29,7 +18,7 @@ Les enjeux ne sont pas seulement financiers : les emplois, l’image et la stabi
 * Deni de services
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Les principaux vercteurs d'attaques
 
@@ -39,7 +28,7 @@ Les enjeux ne sont pas seulement financiers : les emplois, l’image et la stabi
 * **Accès à distance** (ex: RDP)
 * **Accès physique** (ex: clé USB)
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 ## Notions SSI
 
 * **système d’information** :  ensemble organisé de ressources (matériel, logiciels, personnel, données et procédures) permettant de traiter et de diffuser de l’information.
@@ -49,7 +38,7 @@ Les enjeux ne sont pas seulement financiers : les emplois, l’image et la stabi
 * **Actifs** (Assets) : tout ce qui a de la valeur au sein du SI
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## La surface d'attaque
@@ -63,7 +52,7 @@ Tout ce que vous exposez à vos adversaires
 * l'Humain
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## Les attaquants
@@ -91,7 +80,7 @@ Tout ce que vous exposez à vos adversaires
 * **Intérêts étatiques et mercenariat** : espionnage et enjeux régaliens
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## Les vulnérabilités
@@ -107,7 +96,7 @@ Faiblesses au sein du système d'information
 
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ### Pourquoi y a t-il autant de vulns ?
 
@@ -156,7 +145,7 @@ check:
     syscall
 ```
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 
@@ -178,7 +167,7 @@ Niveau de risque en fonction de la gravité (ordonnée ) et de la vraisemblance 
 
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## Le traitement du risque
@@ -189,7 +178,7 @@ Niveau de risque en fonction de la gravité (ordonnée ) et de la vraisemblance 
 * accepter : laisser le risque tel quel est assumer l'impact d'une exploitation par un attaquant
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## Critères de sécurité (DICP)
@@ -205,7 +194,7 @@ Niveau de risque en fonction de la gravité (ordonnée ) et de la vraisemblance 
 * **Authentitication** : L’authentification a pour but de vérifier l’identité dont une entité se réclame. ***La personne est bien celle qu'elle prétend être.***
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Le STRIDE (les menaces plutôt que les DICP)
 
@@ -218,7 +207,7 @@ Niveau de risque en fonction de la gravité (ordonnée ) et de la vraisemblance 
 
 [source Microsoft](https://docs.microsoft.com/fr-fr/azure/security/develop/threat-modeling-tool-threats)
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Cadre juridique des systèmes de traitement automatisé de données (STAD)
 
@@ -229,7 +218,7 @@ Niveau de risque en fonction de la gravité (ordonnée ) et de la vraisemblance 
 * Lorsque les infractions prévues aux deux premiers alinéas ont été commises à l'encontre d'un système de traitement automatisé de données à caractère personnel mis en œuvre par l'Etat, la peine est portée à **7 ans d'emprisonnement et à 300 000 € d'amende**.
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ### Les émissions radio
 
@@ -242,7 +231,7 @@ Niveau de risque en fonction de la gravité (ordonnée ) et de la vraisemblance 
 * En dehors de dérogations encadrées pour des services de l’État, la possession, l’utilisation, la cession à titre commercial ou gratuit, la publicité illicite de brouilleurs sont strictement interdites (article L. 33-3-1 du CPCE). Ce sont des délits soumis à une sanction pénale pouvant aller jusqu’à **6 mois de prison et 30 000 euros d’amende** (L. 39-1 du CPCE).
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ### Le RGPD
 
@@ -260,19 +249,19 @@ Il est obligatoire de :
 * le montant des sanctions pécuniaires peut s'élever jusqu'à **20 millions d'euros ou dans le cas d'une entreprise jusqu'à 4 % du chiffre d'affaires annuel mondial**
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ### Le cas du lanceur d'alerte
 
 * Extrait de l'**Art. L. 2321-4 du code de la défense** : Pour les besoins de la sécurité des systèmes d’information, l’obligation prévue à l’article 40 du code de procédure pénale n’est pas applicable à l’égard d’une personne de bonne foi qui **transmet à la seule autorité nationale** de sécurité des systèmes d’information une information sur l’existence d’une vulnérabilité concernant la sécurité d’un système de traitement automatisé de données.
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Le cas des éditeurs de logiciels
 
 * Extrait de l'**Art. L2321-4-1 du Code de la défense** : En cas de vulnérabilité significative affectant un de leurs produits ou en cas d'incident informatique compromettant la sécurité de leurs systèmes d'information et susceptible d'affecter significativement un de leurs produits, **les éditeurs de logiciels notifient à l'autorité nationale de sécurité des systèmes d'information** cette vulnérabilité ou cet incident ainsi que l'analyse de ses causes et de ses conséquences.
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Gouvernance
 
@@ -281,7 +270,7 @@ Il est obligatoire de :
 * SOC : Security operation center, utilise un SIEM pour la supervision de la sécurité.
 * AdR : Analyse de risque
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Normes et cadre réglementaire
 
@@ -295,7 +284,7 @@ Il est obligatoire de :
 * DORA : entités financières
 * II901 : instruction interministérielle 901 (Diffusion Restreinte)
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## La documentation en entreprise (concept anglo-saxon)
@@ -311,7 +300,7 @@ Il est obligatoire de :
 * Guidelines : Best Practices / Recommendations
 * Baselines : Minimal implementation
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## la classification des SI hébergeant des données sensibles
 
@@ -325,7 +314,7 @@ satisfaisant les exigences de sécurité définies dans l’II 901.
 
 Dans la pratique, cette  classification est faite dans le cadre d'une stratégie d'homologation.
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## L'isolation physique
 
@@ -340,7 +329,7 @@ La sécurité physique est la première couche de sécurité d’une entreprise,
 * Limiter les attaques par ingénierie sociale
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ### Les risques liés à la sécurité physique
 
@@ -352,7 +341,7 @@ La sécurité physique est la première couche de sécurité d’une entreprise,
 * Tempest : Compromissions par rayonnement electro magnétique
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Isolation logique et Virtualisation
 
@@ -367,7 +356,7 @@ La sécurité physique est la première couche de sécurité d’une entreprise,
 
 [Source ANSSI](https://cyber.gouv.fr/publications/securite-des-systemes-de-virtualisation)
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ### Les risques liés à la virtualisation
 
@@ -381,7 +370,7 @@ La sécurité physique est la première couche de sécurité d’une entreprise,
 
 [Source ANSSI](https://cyber.gouv.fr/publications/securite-des-systemes-de-virtualisation)
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ### Exemple de matériels
 
@@ -391,7 +380,7 @@ La sécurité physique est la première couche de sécurité d’une entreprise,
 * [Flipper zero](https://flipperzero.one/)
 * [Wfi PineApple](https://shop.hak5.org/products/wifi-pineapple)
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Les mots de passe
 
@@ -406,7 +395,7 @@ Toujours le principal point d'entrée pour l'attaquant
 * Comptes de services : +30 chars
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## Les smartphones
@@ -419,7 +408,7 @@ Les problématiques spécifiques aux Smartphones
 * Backdoor Fabricant : micro activable légalement
 * Pas toujours à jour: Krack, 5Ghoul
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## L'ingénierie sociale
@@ -436,7 +425,7 @@ Les problématiques spécifiques aux Smartphones
 * Urgence
 * Sabotage
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ### Phishing
@@ -458,7 +447,7 @@ Phishing à partir de `https://www.securite-solutions.fr/login`, où est le piè
 ```
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Le "Zero Trust"
 
@@ -472,7 +461,7 @@ Politique permettant de vérifier
 
 * Les services (Conditions selon la requête utilisateur)
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## Le Cloud
@@ -486,7 +475,7 @@ Consiste à utiliser des ressources distantes le plus souvent au travers d’int
 | Hybride | Public + Privé |
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Les responsabilités dans un contexte Cloud
 
@@ -504,7 +493,7 @@ Répartition des responsabilités entre le fournisseur de services cloud (CSP):
 | **Stockage** | CSP | CSP | CSP |
 | **Réseau** | CSP | CSP | CSP |
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 ## Les audits
@@ -520,14 +509,14 @@ Les activités couvertes par le référentiel PASSI :
 [Source PASSI](https://cyber.gouv.fr/actualites/appel-public-commentaires-sur-la-mise-jour-du-referentiel-passi)
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Référentiels et bonnes pratiques
 
 * [ANSSI](https://cyber.gouv.fr/)
 * [Guide d'hygiène](https://cyber.gouv.fr/publications/guide-dhygiene-informatique)
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Les réflexes en cas d'incidents
 
@@ -538,11 +527,10 @@ Les activités couvertes par le référentiel PASSI :
 * [ANSSI : Gestion de crise](https://cyber.gouv.fr/anticiper-et-gerer-une-crise-cyber)
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## Pour aller plus loin 
 
 * [Supports Dojo-101](https://github.com/Aif4thah/Dojo-101/)
 * [Démonstration d'attaques](https://github.com/Aif4thah/VulnerableLightApp)
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

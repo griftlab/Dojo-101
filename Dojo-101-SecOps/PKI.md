@@ -22,17 +22,23 @@
 
 ## Points à prendre en compte pour la sécurité
 
-* La durée de validité des certificats et les algorithmes de chiffrements choisis
+* La durée de validité des certificats et les algorithmes de chiffrements choisis.
+
 * L’impact de la compromission d’une clé privée (cliente ou serveur) sur le reste de l’IGC et de fait le choix de l’autorité de certification ainsi que les méthodes de révocation en fonction du besoin.
-* Le stockage et le cloisonnement des secrets
-* Le cas échéant, les protocoles d’enrôlement
-* Les erreurs d’implémentation ou de configuration
+
+* Le stockage et le cloisonnement des secrets.
+
+* Le cas échéant, les protocoles d’enrôlement.
+
+* Les erreurs d’implémentation ou de configuration.
+
 
 ## Revocation et vérification de validité
 
 * CRL (Ceritifcate Revocation list)
 
 * requêtes OCSP
+
 
 ## Emplacements des certificats
 
@@ -57,39 +63,14 @@ Get-PfxCertificate .\cert.cer |fl *
 
 ## Exemple d'architecture PKI
 
-```txt                     
-                                   +#####################                  
-                                   #+#------------------+###               
-                                   #-#                      #              
-                                   #-#                      #              
-                                   #-#                      #              
-                                   #-#    AC RACINE         #              
-                                   #-#                      #              
-                                   ###                      #              
-                                     #                      #              
-                                              #                            
-                         +---------++++++++++-+-++++++++------------+       
-                         #                                          #        
-              -###################### .                 ######################+.                                           
-              .--                      -                #-                      ..                                         
-              .-+     .   -###      .  -                #-          ###.     .  ..                                         
-              .-+                      -                +-.                     ..                                         
-              .-+  AC Intermerdiaire   -                #-. AC Intermerdiaire  ..                                         
-              .-+      .      . .   +  -                #-.  .   -      . -  .  ..                                         
-              -##          A           -                ##.          B         ..                                         
-                .                      -                                         .                                         
-                 +...... . ...........                    +-....................#                                          
-             ........... # ..........                                #       
-           #                        #                                #
-.######################     #######################       ######################-                                            
--##                     +#  #-#                     #     #+#                     #                                          
-.##                   .  +  #-#                  .   #    #+                      #                                        
-.##  ..  #    .#      .  +  #-#  ..  #   .#      .   #    ##. ..  #     #.     .  #                                         
-.##   . CERTIFICAT  .    +  #-#      CERTIFICAT  .   #    ##.  .  CERTIFICAT  ..  #                                      
-.##  .   SERVICE A       +  #-# ...   SERVICE B      #    ##.  .   CLIENT 1   ..  #                                         
--##  .                   +  #+#                      #    ##. .. .  ... ..    .. .#                                     
- ## ....             ..  +   ## ...              .   #    ##- ....            ..  #                                         
-                         #    #                      #     -                     #                                         
-    ....................        ....................        ....................                                           
-```                                    
+```mermaid
+flowchart TD
+    A[AC Racine]
+    A --> B[AC Intermediaire 1]
+    A --> C[AC Intermediaire 2]
+    B --> D[Certicat Service A]
+    B --> E[Certicat Service B]
+    C --> F[Certicat Service C]
+    C --> G[Certicat Service D]
+```                       
                            
