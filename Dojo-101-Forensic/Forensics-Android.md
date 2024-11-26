@@ -72,8 +72,6 @@ Avant la collecte d'artefact, penser à **ajouter le timestamp au prompt**
 .\adb.exe get-state
 ```
 
-Si `unauthorized`, autorisation sur le téléphone à valider (notification)
-
 ### Dump Système
 
 ```powershell
@@ -122,6 +120,12 @@ Pour spécifier une date `.\adb.exe logcat -d -T "2024-11-29 16:00:00.000"`
 .\adb.exe shell content query --uri content://sms > .\Artefacts\sms.txt
 .\adb.exe shell content query --uri content://mms > .\Artefacts\mms.txt
 .\adb.exe shell content query --uri content://call_log/calls > .\Artefacts\calls.txt
+```
+
+### Usages des applicaitons
+
+```powershell
+.\adb.exe shell dumpsys usagestats > .\Artefacts\DumpsysUsagetats.txt
 ```
 
 ### Pull de fichiers
@@ -222,6 +226,8 @@ Vérifier notament la présence
 
 
 
+
+
 ## Pour aller plus loin, en cas d'élements probants
 
 ## Autres solutions de Backup
@@ -260,6 +266,11 @@ mvt-android check-backup --output /path/to/results/ /path/to/backup.ab`
 ```
 
 
+### Consomation / temps passé sur une app
+
+Sur le device : `paramètres` -> `bien être numérique et controle parental`
+
+
 ### Recherche d'IoCs
 
 Lorsqu'on sait ce que l'on cherche, trouver les IoCs Correspondants
@@ -268,11 +279,13 @@ Lorsqu'on sait ce que l'on cherche, trouver les IoCs Correspondants
 mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
 ```
 
-### Web
+
+### Web (rooté)
 
 ```powershell
  .\adb.exe shell content query --uri content://com.android.chrome.browser/history
 ```
+
 
 ### Codes IHM
 
@@ -281,6 +294,11 @@ Redirection d'appel : `*#21#`
 Appel en absence : `*#62#` 
 
 > Pour info, à ne pas faire en forensic : désactiver les redirection :  #002# 
+
+
+### Traffic réseau
+
+Mise en proxy / derrière un firewall
 
 
 ### Misc
