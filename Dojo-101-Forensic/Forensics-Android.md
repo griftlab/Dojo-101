@@ -10,8 +10,10 @@
 
 * [Android Triage](https://github.com/RealityNet/android_triage)
 
-## Structure du Système de fichier
+* [Android Security Reference](https://github.com/doridori/Android-Security-Reference/tree/master)
 
+## Structure du Système de fichier
+ 
 | Chemin | Description |
 |--------|-------------|
 | /system | system et applications préinstallées|
@@ -19,6 +21,14 @@
 | /sdcard | données externes ou internes, fichiers multimédias et documents |
 | /cache | Fichiers temporaires |
 | /data | Données des Applications |
+
+## Type d'autorisations d'applications
+
+* Installation : contient des autorisation normales et signature.
+* Normales (protection `normal`)
+* Signatures (protection `signature`)
+* Execution (protection `dangerous`)
+* Spéciales (protection `appop`)
 
 
 ## Procedure
@@ -40,7 +50,7 @@
 
 1. `Paramètres` -> `à propos du téléphone` -> `Numéro de build`*4
 
-2. `Paramètres` -> `Systèmes` -> `Optins pour les développeurs` -> `Debogage USB`
+2. `Paramètres` -> `Systèmes` -> `Options pour les développeurs` -> `Debogage USB`
 
 
 ## Adb
@@ -264,7 +274,7 @@ mvt-android check-backup --iocs ~/iocs/malware.stix2 /path/to/android/backup/
  .\adb.exe shell content query --uri content://com.android.chrome.browser/history
 ```
 
-### CodeS IHM
+### Codes IHM
 
 Redirection d'appel : `*#21#`
 
