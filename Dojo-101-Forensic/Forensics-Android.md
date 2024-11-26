@@ -137,13 +137,10 @@ téléchargement des documents utilisateur
 .\adb.exe pull /sdcard Artefacts/sdcard
 ```
 
-### Montage
-
-Vérifier notament la présence
+### Montages
 
 ```powershell
-.\adb.exe shell mount
-.\adb.exe shell ls /mnt
+.\adb.exe shell mount > .\Artefacts\mount.txt
 ```
 
 ### Réseaux
@@ -230,22 +227,20 @@ Vérifier notament la présence
 
 ## Pour aller plus loin, en cas d'élements probants
 
-## Autres solutions de Backup
+### Autres solutions de Backup
 
-### Via Google
+Via Google :
 
 `Paramètres` -> `Système` -> `Sauvegarde`, ensuite visible sur [Google](https://drive.google.com/drive/backups)
 
 
-### Via bu 
+Via bu :
 
 ```powershell
 .\adb.exe shell 'bu backup -apk -all' > BUbackup.adb
 ```
 
-
-
-### Extraction des backups adb
+Extraction des backups adb :
 
 * via [ABE](https://github.com/nelenkov/android-backup-extractor) : 
 
@@ -253,13 +248,13 @@ Vérifier notament la présence
 java -jar .\abe-3e9a273.jar unpack .\backup.ab backup.tar
 ```
 
-* via dd
+via dd :
 
 ```sh
 dd if=myAndroidBackup.ab bs=4K iflag=skip_bytes skip=24 | openssl zlib -d > myAndroidBackup.tar
 ```
 
-* via l'outil `MVT` :
+via l'outil `MVT` :
 
 ```sh
 mvt-android check-backup --output /path/to/results/ /path/to/backup.ab`
