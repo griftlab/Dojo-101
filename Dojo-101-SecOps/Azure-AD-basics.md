@@ -15,30 +15,6 @@
 * WS Federation
 * Azure AD Connect is a separate service that allows you to synchronize a traditional Active Directory with your Azure AD instance
 
-## Protocoles et outils hybrides (co-managé)
-
-> Attention aux risques de pivots en cas d'intrusion.
-
-| Windows Server AD	 | Azure AD / Entra ID |
-|--------------------|----------|
-| LDAP | Rest APIs |
-| NTLM | OAuth/SAML |
-| Kerberos | OpenID |
-| OU Tree | Flat Structure |
-| Domains and Forests | Tenants |
-| Trusts | Guests |
-
-Dans le cas **hybride** il existe plusieurs solutions de synchronisation 
-
-* Microsoft Entra Connect (Azure AD Connect) 
-* Microsoft Entra Cloud Sync.
-
-Côté local on utilise toujours l'`AD` et les solutions tels que `Configuration Manager`
-
-Coté Azure on à le `centre d’administration Microsoft Entra` et le `MDM` (intune),
-
-Les clients restent alors managés via l' `AD local` **et** ont joint `l'AAD / Entra ID`
-
 
 ## Subscription et tenant
 
@@ -195,8 +171,8 @@ Settings : `Azure Active Directory > Devices > Device settings`
 
 AAD joins uses MDM, 2 approches:
 
-* MDM only: ex `intune`
-* Co management: SCCM + MDM
+* MDM only: avec la solution microsoft `Intune` ou une autre
+* Co-management (hybrid): SCCM + MDM
 
 Provisioning options:
 
@@ -206,15 +182,21 @@ Provisioning options:
     
 Ajouter d'autres solutions MDM: `Azure Active Directory > Mobility (MDM and MAM) > Add application`
 
+### Fonctionalité Intune
 
-### Basics of Enterprise State Roaming
+* Mobile Threat Defense (Microsoft Defender ou autres Anti virus)
+* Built in reporting
+* Intune Admin Center : `Policies` (security rules, App protection, Device Configuration, Compliances, Conditional Access...)
+
+
+## Basics of Enterprise State Roaming
 
 With Enterprise State Roaming, users' settings and application data follow them when they switch devices : `Azure Active Directory > Devices > Enterprise State Roaming`
 
 * Stale Data= 1year
 * deleted retention= 90jours
 
-## Self-service password reset steps:
+## Self-service password reset steps
 
 Configuration : `Active Directory > Password reset`
 
@@ -224,7 +206,7 @@ Configuration : `Active Directory > Password reset`
 * Password reset: If the user passes the authentication tests, they can enter a new password and confirm it.
 * Notification: A message is usually sent to the user to confirm the reset.
 
-### SSPR methods:
+### SSPR methods
 
 * Mobile App notification
 * Mobile App code
@@ -232,3 +214,27 @@ Configuration : `Active Directory > Password reset`
 * Mobile phone
 * Office phone
 * Security Questions
+
+## Protocoles et outils en cloud hybride (co-managé)
+
+> Attention aux risques de pivots en cas d'intrusion.
+
+| Windows Server AD	 | Azure AD / Entra ID |
+|--------------------|----------|
+| LDAP | Rest APIs |
+| NTLM | OAuth/SAML |
+| Kerberos | OpenID |
+| OU Tree | Flat Structure |
+| Domains and Forests | Tenants |
+| Trusts | Guests |
+
+Dans le cas **hybride** il existe plusieurs solutions de synchronisation 
+
+* Microsoft Entra Connect (Azure AD Connect) 
+* Microsoft Entra Cloud Sync.
+
+Côté local on utilise toujours l'`AD` et les solutions tels que `Configuration Manager`
+
+Coté Azure on à le `centre d’administration Microsoft Entra` et le `MDM (Intune)`,
+
+Les clients restent alors managés via l' `AD local` **et** ont joint `l'AAD / Entra ID`
