@@ -5,15 +5,17 @@
 * Structured (SQL)
 * Semi-structured (JSON, XML, YAML)
 
-## Azure Storage:
+## Azure Storage
+
 * Azure Blobs
 * Azure Files
 * Azure Queues
 * Azure Tables
 
-## NOT Azure Storage:
-Azure SQL
-Azure Cosmos DB
+## NOT "Azure Storage"
+
+* Azure SQL
+* Azure Cosmos DB
 
 ## Storage Account Settings (storage service):
 
@@ -43,22 +45,24 @@ Blob storage: a legacy kind that allows only block blobs and append blobs
 
 ## The available creation tools are:
 
-Azure Portal
-Azure CLI (Command-line interface)
-Azure PowerShell
-Management client libraries
+* Azure Portal
+* Azure CLI (Command-line interface)
+* Azure PowerShell
+* Management client libraries
 
 ## Storage Account name = Globaly Unique
 
 Azure storage explorer:
-Azure Blob storage. Blob storage is used to store unstructured data as a binary large object (blob).
-Azure Table storage. Table storage is used to store NoSQL, semi-structured data.
-Azure Files. Azure Files is a file-sharing service that enables access through the Server Message Block protocol, similar to traditional file servers.
-Azure Data Lake Storage. Azure Data Lake, based on Apache Hadoop, is designed for large data volumes and can store unstructured and structured data.
+
+* **Azure Blob storage** : Blob storage is used to store unstructured data as a binary large object (blob).
+* **Azure Table storage** : Table storage is used to store NoSQL, semi-structured data.
+* **Azure Files** : Azure Files is a file-sharing service that enables access through the Server Message Block protocol, similar to traditional file servers.
+* **Azure Data Lake Storage** : Azure Data Lake, based on Apache Hadoop, is designed for large data volumes and can store unstructured and structured data.
 
 Dev (pour pas payer de storage account):
-Azure Storage Emulator uses a local instance of Microsoft SQL Server 2012 Express LocalDB. It emulates Azure Table, Queue, and Blob storage.
-Azurite, which is based on Node.js, is an open-source emulator that supports most Azure Storage commands through an API.
+
+* Azure Storage Emulator uses a local instance of Microsoft SQL Server 2012 Express LocalDB. It emulates Azure Table, Queue, and Blob storage.
+* Azurite, which is based on Node.js, is an open-source emulator that supports most Azure Storage commands through an API.
 
 ## Connection types
 
@@ -110,8 +114,10 @@ az cosmosdb keys list \
 
 ## create a data lake:
 
+```sh
 az extension add --name storage-preview
 ```
+
 1 subscription = 200 storage accounts = 200*500 TB 
 
 ## Azure data services
@@ -122,7 +128,6 @@ az extension add --name storage-preview
 * Files: Managed file shares for cloud or on-premises deployments.
 * Queues: A messaging store for reliable messaging between application components.
 * Table Storage: A NoSQL store for schemaless storage of structured data. Table Storage is not covered in this module.
-
 
 ## Create azure storage account:
 
@@ -150,9 +155,6 @@ API REST Endpoints:
 | Files | https://[name].file.core.windows.net/ |
 
 
-
-
-
 ## Sécu:
 
 ### cross-origin resource sharing (CORS)
@@ -161,9 +163,11 @@ CORS uses HTTP headers so that a web application at one domain can access resour
 By using CORS, web apps ensure that they load only authorized content from authorized sources
 
 ### shared access signature (SAS)
- A shared access signature is a string that contains a security token that can be attached to a URI. you allow only the access that the application needs to do the task.
 
-## Type of SAS:
+A shared access signature is a string that contains a security token that can be attached to a URI. you allow only the access that the application needs to do the task.
+
+## Type of SAS
+
 Service Level: to allow access to specific resources in a storage account (ex: allow an app to retrieve list of files)
 Account Level: Service Level + resources and abilities (ex: create File systems)
 

@@ -67,12 +67,17 @@ az network watcher configure --ressource-group NetworkWatcherRG --locations <loc
 Une les fichiers uploadés via un point d'accès public, le désactiver et utiliser le portail
 
 
-## Analyse des permissions
+## Analyse des permissions des application
 
-Il peut etre interessant de classer par niveau de risque les permissions ensuite utilisée via Graph-API
+Type de permissions
+
+* **Role based** : Permissions RBAC
+* **Scope Delegated** : Agit au nom d'un utilisateur authentifié (Impersonation)
+
+Il peut etre interessant de les classer par niveau de risques :
 
 ```powershell
-## sort Azure graph api
+## sort Azure permissions
 
 $appli = gc .\Permissions-Role-Application-review.csv
 $deleg = gc .\Permissions-Scope-Delegated-review.csv

@@ -138,17 +138,3 @@ Stratégie de sécurité du contrôleur de domaine -> Paramètres de sécurité/
 ## Tester la connexion avec le contrôleur de domaine:
 
 `nltest /sc_query:<domain>`
-
-
-
-## Hybrid with Azure
-
-| Windows Server AD	 | Azure AD / Entra ID |
-|--------------------|----------|
-| LDAP | Rest APIs |
-| NTLM | OAuth/SAML |
-| Kerberos | OpenID |
-| OU Tree | Flat Structure |
-| Domains and Forests | Tenants |
-| Trusts | Guests |
-

@@ -1,6 +1,6 @@
-## Managed Disks:
+# Administration Azure
 
-Managed disks are the newer and recommended disk storage model. 
+## Managed Disks:
 
 Types of disks:
 
@@ -13,10 +13,13 @@ Types of disks:
 
 ## NSG:
 
-NSGs use rules to allow or deny traffic moving through the network. Each rule identifies the source and destination address (or range), protocol, port (or range), 
+NSGs use rules to allow or deny traffic moving through the network. 
+
+Each rule identifies the source and destination address (or range), protocol, port (or range), 
 direction (inbound or outbound), a numeric priority, and whether to allow or deny the traffic that matches the rule.
 
-The rules are evaluated in priority order, starting with the lowest priority rule. Deny rules always stop the evaluation. 
+The rules are evaluated in priority order, starting with the lowest priority rule. 
+Deny rules always stop the evaluation. 
 For example, if a network interface rule blocks an outbound request, any rules applied to the subnet will not be checked. 
 For traffic to be allowed through the security group, it must pass through all applied groups.
 
@@ -28,7 +31,6 @@ az vm open-port \
 ```
 
 ## VM Sizing:
-
 
 ```powershell
 az vm list --output table
@@ -48,7 +50,6 @@ az vm resize \
 --resource-group learn-f95b0f1e-6792-468f-bd1d-88a0391c03a3 \
 --name SampleVM \
 --size Standard_D2s_v3
-
 ```
 
 ## AZ CLI:
@@ -63,7 +64,6 @@ az vm create \
 --admin-username azureuser \
 --generate-ssh-keys \
 --verbose 
-
 
 az vm stop \
 --name SampleVM \
@@ -99,11 +99,9 @@ New-AzVm `
 -Size "Standard_DS2_v2"
 
 Get-AzPublicIpAddress -Name dataProcStage1
-
 ```
 
-### désassocier l'IP publique:
-
+## désassocier l'IP publique:
 
 ```powershell
 $nic = Get-AzNetworkInterface -Name dataProcStage2 -ResourceGroup vm-networks
@@ -111,7 +109,7 @@ $nic.IpConfigurations.publicipaddress.id = $null
 Set-AzNetworkInterface -NetworkInterface $nic 
 ```
 
-### Azure VPN Gateway:
+## Azure VPN Gateway:
 
 Each virtual network can have only one VPN gateway
 
@@ -124,105 +122,73 @@ gateway type :
 * Point-to-site connections over IKEv2 or SSTP, to link client computers to resources in Azure.
 
 
-Point to site	Site to site	ExpressRoute
-Azure supported services	Cloud services and VMs	Cloud services and VMs	All supported services
-Typical bandwidth	Depends on VPN Gateway SKU	Depends on VPN Gateway SKU	See ExpressRoute bandwidth options
-Protocols supported	SSTP and IPsec	IPsec	Direct connection, VLANs
-Routing	RouteBased (dynamic)	PolicyBased (static) and RouteBased	BGP
-Connection resiliency	Active-passive	Active-passive or active-active	Active-active
-Use case	Testing and prototyping	Dev, 	Enterprise/mission  critical
-test and small-scale production
+### VPN Workflow:
 
+1. Design your connectivity topology, listing the address spaces for all connecting networks.
 
-VPN Workflow:
+2. Create an Azure virtual network.
 
-Design your connectivity topology, listing the address spaces for all connecting networks.
+3. Create a VPN gateway for the virtual network.
 
-Create an Azure virtual network.
+4. Create and configure connections to on-premises networks or other virtual networks, as required.
 
-Create a VPN gateway for the virtual network.
-
-Create and configure connections to on-premises networks or other virtual networks, as required.
-
-If required, create and configure a point-to-site connection for your Azure VPN gateway.
+5. If required, create and configure a point-to-site connection for your Azure VPN gateway.
 
 
 
+### The type of VPN gateway 
 
-The type of VPN gateway you create will depend on your architecture. Options are:
+** RouteBased** : 
 
-RouteBased
+* Route-based VPN devices use any-to-any (wildcard) traffic selectors, and let routing/forwarding tables direct traffic to different IPsec tunnels. 
+* Route-based connections are typically built on **router platforms** where each IPsec tunnel is modeled as a network interface or VTI (virtual tunnel interface).
 
-Route-based VPN devices use any-to-any (wildcard) traffic selectors, and let routing/forwarding tables direct traffic to different IPsec tunnels. 
-Route-based connections are typically built on router platforms where each IPsec tunnel is modeled as a network interface or VTI (virtual tunnel interface).
+** PolicyBased** 
 
-PolicyBased
+* Policy-based VPN devices use the combinations of prefixes from both networks to define how traffic is encrypted/decrypted through IPsec tunnels. 
+* A policy-based connection is typically built on **firewall devices** that perform packet filtering. IPsec tunnel encryption and decryption are added to the packet filtering and processing engine.
 
-Policy-based VPN devices use the combinations of prefixes from both networks to define how traffic is encrypted/decrypted through IPsec tunnels. 
-A policy-based connection is typically built on firewall devices that perform packet filtering. IPsec tunnel encryption and decryption are added to the packet filtering and processing engine.
+### Set up a VPN gateway
 
-Set up a VPN gateway
+1. Create a virtual network
 
-Create a virtual network
+2. Add a gateway subnet
 
-Add a gateway subnet
+3. Specify a DNS server (optional)
 
-Specify a DNS server (optional)
+4. Create a virtual network gateway
 
-Create a virtual network gateway
+5. Generate certificates
 
-Generate certificates
+6. Add the client address pool
 
-Add the client address pool
+7. Configure the tunnel type
 
-Configure the tunnel type
+8. Configure the authentication type
 
-Configure the authentication type
+9. Upload the root certificate public certificate data
 
-Upload the root certificate public certificate data
+10. Install an exported client certificate
 
-Install an exported client certificate
+11. Generate and install the VPN client configuration package
 
-Generate and install the VPN client configuration package
+12. Connect to Azure
 
-Connect to Azure
 
 ### ExpressRoute:
 
-Advantages that ExpressRoute provides include:
+Avantages : 
 
-Faster speeds, from 50 Mbps to 10 Gbps, with dynamic bandwidth scaling
+* Faster speeds, from 50 Mbps to 10 Gbps, with dynamic bandwidth scaling
 
-Lower latency
+* Greater reliability through built-in peering
 
-Greater reliability through built-in peering
 
-Highly secure
+## Azure templates (IaC)
 
-ExpressRoute brings a number of further benefits, such as:
+**Infra as code** : les ressources sont définies dans des fichiers `JSON`
 
-Connectivity to all supported Azure services
-
-Global connectivity to all regions (requires premium add-on)
-
-Dynamic routing over Border Gateway Protocol
-
-Service-level agreements (SLAs) for connection uptime
-
-Quality of Service (QoS) for Skype for Business
-
-ExpressRoute connectivity models
-
-IP VPN network (any-to-any)
-
-Virtual cross-connection through an Ethernet exchange
-
-Point-to-point Ethernet connection
-
-### Azure template:
-json files. on décrit les ressources et pas la maniere de les déployer (Infra as code)
-
-Pour démarrer: QuickStart Template Gallery: https://azure.microsoft.com/fr-fr/resources/templates/
+* [quickStart Template Gallery](https://azure.microsoft.com/fr-fr/resources/templates/)
 
 exemple de déploiement - validation puis création:
 az deployment group validate \
@@ -281,7 +247,6 @@ az vm extension set \
 ```
 
 
-
 ## Azure disk encryption technologies
 
 * Storage Service Encryption (SSE) - protect data at rest, azure managed disks, enabled by default: AES256
@@ -309,6 +274,7 @@ az keyvault create \
 ```
 
 GUI: home -> create ressource -> Key Vault
+
 
 ### Enabling access policy:
 
@@ -340,7 +306,7 @@ az vm encryption enable \
 --name <vm-name> \
 --disk-encryption-keyvault <keyvault-name> \
 --volume-type [all | os | data] \
-``
+```
 
 ### disks Encryption status:
 
