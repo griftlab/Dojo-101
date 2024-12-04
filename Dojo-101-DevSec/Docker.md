@@ -67,6 +67,12 @@ t = TTY
 docker run -it debian
 ```
 
+## Metriques
+
+```sh
+docker stats
+```
+
 ## stopper et supprimer un container
 
 ```sh

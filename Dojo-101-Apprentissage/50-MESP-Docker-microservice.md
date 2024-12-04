@@ -59,7 +59,9 @@ NB: *ce contexte est issu du Lab déjà mis en place*
 
 11. Exporter les logs sur la machine hôte afin de garder les traces en cas de suppression de containers
 
-12. Optionel : Pour aller plus loin, réaliser le déploiement à l'aide de Terraform
+12. Afficher les métriques et relever la consomation des containers
+
+13. Optionel : Pour aller plus loin, réaliser le déploiement à l'aide de Terraform
 
 
 ## Modalités d'évaluation

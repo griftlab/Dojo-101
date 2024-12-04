@@ -8,12 +8,12 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 
 ## Ressources
 
-[Gestes professionnels](https://github.com/Aif4thah/Dojo-101)
-[VulnerableLightApp](https://github.com/Aif4thah/VulnerableLightApp)
-[Badblood](https://github.com/davidprowe/BadBlood)
-[ISO Microsoft](https://www.microsoft.com/fr-fr/evalcenter)
-[ISO Linux Debian](https://www.debian.org/index.fr.html)
-[WinRM](https://learn.microsoft.com/fr-fr/windows/win32/winrm/installation-and-configuration-for-windows-remote-management)
+* [Gestes professionnels](https://github.com/Aif4thah/Dojo-101)
+* [VulnerableLightApp](https://github.com/Aif4thah/VulnerableLightApp)
+* [Badblood](https://github.com/davidprowe/BadBlood)
+* [ISO Microsoft](https://www.microsoft.com/fr-fr/evalcenter)
+* [ISO Linux Debian](https://www.debian.org/index.fr.html)
+* [WinRM](https://learn.microsoft.com/fr-fr/windows/win32/winrm/installation-and-configuration-for-windows-remote-management)
 
 ## Contexte
 
@@ -33,16 +33,28 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 
 ```mermaid
 flowchart TD
-    A[Hyperviseur] -->|Host| B(Windows AD)
-    A --> | Host| C(Windows Client)
-    A --> | Host | D(Linux Server)
+    A[Hyperviseur] -->|hosts| B(Windows Server)
+    A --> | hosts| C(Windows Client)
+    A --> | hosts| D(Linux Server)
+
+    B --> |running| Z{AD DC}
+    B --> |running| E{DNS}
+    B --> |running| F{WinRM}  
+    B --> |running| G{SMB}  
+
+    D --> |running| H{WEB VLA}
+    D --> |running| I{SSH}
+
+    C --> |joined| Z
+
+    B --> |executed| J>BadBlood]
 ```
 
 ## Modalités pédagogiques
 
 Binôme ou seul (au choix)
 
-Attention les éléments mis en place contiennent des vulnérabilités (indispensables pour l'apprentissage), il faudra par précaution:
+> Attention les éléments mis en place contiennent des vulnérabilités (indispensables pour l'apprentissage), il faudra par précaution:
 
  * Mettre à jour l'hyperviseur
  * Isoler au maximum le serveur Windows une fois que le nécessaire est installé

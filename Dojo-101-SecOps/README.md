@@ -4,21 +4,43 @@
 
 Les pertes mondiales imputables aux attaques informatiques dépassent les **1000 milliards/an** de dollars depuis 2020, ce qui représente plus de **1% du PIB mondial**
 
-Depuis ce chiffre est en constante augmentation...
+Depuis ce chiffre est en constante augmentation : *15%/an*
 
 Les enjeux ne sont pas seulement financiers : les emplois, l’image et la stabilité de l’entreprise dépendent de la sécurité de ses actifs.
 
-
+```mermaid
+pie title Panorama Cybermenace 2023 ANSSI
+    "TPE/PME/ETI" : 34
+    "Collectivité territoriale/locale" : 24
+    "Entreprise stratégique" : 10
+    "Établissement de santé" : 10
+    "Établissement d’enseignement supérieur" : 5
+    "EPA, EPIC" : 4
+    "Ministère" : 2
+    "Autre" : 2
+```
 
 ## Les attaques les plus courantes:
 
-* Usurpation d'identité
-* Vol de données
-* Chiffrement par ransomware
-* Deni de services
+1. Usurpation d'identité
+2. Vol de données
+3. Chiffrement par ransomware
+4. Deni de service
+5. Infection par malware
+
+(Source : CESIN,2022)
 
 
+## Modes opératoires
 
+```mermaid
+pie title Modes Opératoires CESIN 2024
+    "Phishing" : 60
+    "Exploitation de faille" : 43
+    "Attaque DDOS" : 34
+    "Arnaque au président" : 28
+    "Tentatives de connexion": 34
+```
 
 ## Les principaux vercteurs d'attaques
 
@@ -27,6 +49,15 @@ Les enjeux ne sont pas seulement financiers : les emplois, l’image et la stabi
 * **Site malveillant** (ex: lien vers un site compromis)
 * **Accès à distance** (ex: RDP)
 * **Accès physique** (ex: clé USB)
+
+## Causes des cyberattaques
+
+```mermaid
+pie title Causes des Cyberattaques CESIN 2024
+    "Mise en place d’applications non approuvées" : 35
+    "Vulnérabilités résiduelles permanentes " : 34
+    "Négligence ou erreur de manipulation ou de configuration" : 33
+```
 
 
 ## Notions SSI
@@ -38,22 +69,18 @@ Les enjeux ne sont pas seulement financiers : les emplois, l’image et la stabi
 * **Actifs** (Assets) : tout ce qui a de la valeur au sein du SI
 
 
-
-
-
 ## La surface d'attaque
 
 Tout ce que vous exposez à vos adversaires
 
-* L'architecture
-* Les serveurs
-* Les services
-* Les Applications
-* l'Humain
-
-
-
-
+```mermaid
+flowchart TD
+    A{Attaquant} -->|A rchitecture | B(Système d'Information cible)
+    A --> | Serveurs |B
+    A --> | Services |B
+    A --> | Applications |B
+    A --> | L'Humain |B
+```
 
 ## Les attaquants
 
@@ -64,6 +91,7 @@ Tout ce que vous exposez à vos adversaires
 * Grey Hat : Parfois éthique, parfois non...
 * Script Kiddies : Peu de connaissance, mais utilisation d'outils "clé en main"
 
+
 ### Moyens x Ciblage
 
  | Compétences | ciblage | type d'attaque |
@@ -71,6 +99,7 @@ Tout ce que vous exposez à vos adversaires
  | 0 | 0 | Spam |
  | 1 | 0 | attaques opportunistes |
  | 1 | 1 | attaques étatiques ou state sponsored |
+
 
 ### Motivation
 
@@ -85,15 +114,16 @@ Tout ce que vous exposez à vos adversaires
 
 ## Les vulnérabilités
 
-Faiblesses au sein du système d'information
+* **Def. Vulnérabilité** : Faute, par malveillance ou maladresse, dans les spécifications, la conception, la réalisation, l’installation ou la configuration d’un système, ou dans la façon de l’utiliser. 
+* **Remarques** : Une vulnérabilité peut être utilisée par un code d’exploitation et conduire à une intrusion dans le système. (faiblesse sur le SI)
 
-[CERT-FR](https://www.cert.ssi.gouv.fr/)
+
+### Identification et évaluation
 
 * N° CVE : identifiant unique pour une vuln. base [Nist NVD](https://www.cve.org/)
 * Score CVSS : évaluation d'une vulnérabilité [First Calculator](https://www.first.org/cvss/)
 * Reference CWE : mauvaise pratique [MITRE CWE](https://cwe.mitre.org/)
 * Score EPSS : Exploit Prediction Scoring System [First EPSS](https://www.first.org/epss/user-guide)
-
 
 
 
@@ -151,9 +181,15 @@ check:
 
 ## Les Risques
 
-* **Vulnérabilité** : Faute, par malveillance ou maladresse, dans les spécifications, la conception, la réalisation, l’installation ou la configuration d’un système, ou dans la façon de l’utiliser. 
-* **Remarques** : Une vulnérabilité peut être utilisée par un code d’exploitation et conduire à une intrusion dans le système. (faiblesse sur le SI)
+```mermaid
+flowchart TD
+    A[Menace] -->|exploite| B>vulnérabilité]
+    B--> |Induit| C[Impact]
+```
+
+
 * **Risque** = `Menace * Vulnérabilité * Impact` = `Impact * Vraissemblance` = `Gravité * Facilité d'exploitation`
+
 
 Niveau de risque en fonction de la gravité (ordonnée ) et de la vraisemblance (abscisse):
 
