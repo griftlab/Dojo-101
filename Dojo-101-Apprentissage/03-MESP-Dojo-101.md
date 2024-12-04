@@ -8,11 +8,11 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 
 ## Ressources
 
-[Gestes professionnels](https://github.com/Aif4thah/Dojo-101)
-[github-desktop](https://desktop.github.com/)
-[VSCode](https://code.visualstudio.com/)
-[Markdown Wikipedia](https://fr.wikipedia.org/wiki/Markdown)
-
+* [Gestes professionnels](https://github.com/Aif4thah/Dojo-101)
+* [github-desktop](https://desktop.github.com/)
+* [VSCode](https://code.visualstudio.com/)
+* [Markdown Wikipedia](https://fr.wikipedia.org/wiki/Markdown)
+* [Mermaid](https://mermaid.live/)
 
 ## Contexte
 
@@ -33,6 +33,12 @@ Il est nécessaire que vous vous appropriiez le `markdown` (langage texte très 
 5. presser *ctrl+shift+v* pour visualiser le fichier au *format html*
 6. Mettre à jour votre dossier local en faisant un git pull
 
+```mermaid
+flowchart TD
+    A[Depot Github] -->|Clone| B(Git local)
+    A --> |Pull| B
+```
+
 ### Partie 2: contribuer à un projet Open Source
 
 7. Qu'est-ce qu'un *fork* (dans le contexte git/github) ?
@@ -40,6 +46,20 @@ Il est nécessaire que vous vous appropriiez le `markdown` (langage texte très 
 9. Dans ce fichier, décrivez au format markdown les étapes à réaliser pour créer une pull request à partir d'un fork.
 10. Pousser les changements sur votre fork
 11. Créer une pull request sur Aif4thah/Dojo-101 afin de me demander d'ajouter le fichier "README-from-Fork.md" sur mon dépôt (pour cela vous devez au préalable Forker, cloner, commit changes et push vers votre fork).
+
+```mermaid
+gitGraph
+    commit
+    commit
+    branch fork
+    checkout fork
+    commit
+    commit
+    checkout main
+    merge fork
+    commit
+    commit
+```
 
 ## Modalités d'évaluation
 

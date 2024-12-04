@@ -21,6 +21,16 @@
 * 9x : Hacking, sujets avancés
 
 
+## Apprentissage
+
+```mermaid
+flowchart TD
+    A[Prérequis] -->|Essayer| B{Mises en Situations Professionelles}
+    B --> |Être accompagné| A
+    B --> |Réussir| C[Objectifs de formation]
+    C --> |Être corrigé| B
+```
+
 ## Principe de *Compétence*
 
 Savoir agir en situation.

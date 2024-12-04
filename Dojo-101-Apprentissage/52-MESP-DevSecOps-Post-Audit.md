@@ -12,6 +12,8 @@ Ce contenu est publié sous licence "GNU GENERAL PUBLIC LICENSE Version 3" et le
 
 * [Nuclei](https://github.com/projectdiscovery/nuclei)
 
+* [Nuclei HTTP request](https://docs.projectdiscovery.io/templates/protocols/http/basic-http)
+
 * [Gestes professionnels](https://github.com/Aif4thah/Dojo-101)
 
 * [Chaine DevOps](https://learn.microsoft.com/fr-fr/azure/cloud-adoption-framework/ready/considerations/devops-toolchain#azure-devops-and-github-toolchain)

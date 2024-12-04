@@ -24,6 +24,7 @@ Les applications ASP.NET peuvent utiliser la classe System.Diagnostics.Trace pou
 ```C#
 System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 ```
+
 Par défaut, ASP.NET Core utilise le fournisseur de journalisation Microsoft.Extensions.Logging.AzureAppServices.
 
 ## lire les logs
@@ -31,6 +32,7 @@ Par défaut, ASP.NET Core utilise le fournisseur de journalisation Microsoft.Ext
 ```Bash
 az webapp log tail --name appname --resource-group myResourceGroup
 ```
+
 Applications Linux/de conteneur : https://<app-name>.scm.azurewebsites.net/api/logs/docker/zip
 Applications Windows : https://<app-name>.scm.azurewebsites.net/api/dump
 
