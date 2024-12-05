@@ -109,7 +109,7 @@ README Files and those containing the keyword `basics` contain elements that are
 Clone the repository without the history using the following command:
 
 ```sh
- `git clone --depth 1 https://github.com/Aif4thah/Dojo-101`
+git clone --depth 1 https://github.com/Aif4thah/Dojo-101
 ```
 
 Open `DOJO-101` folder with [VSCode](https://code.visualstudio.com/) then,
