@@ -25,10 +25,33 @@
 
 ```mermaid
 flowchart TD
-    A[Prérequis] -->|Essayer| B{Mises en Situations Professionelles}
+    A[Prérequis] -->|Se lancer| B{Mises en situations professionelles validant les compétences du référentiel}
+    B --> |Essayer| C[Objectifs de formation issus du référentiel]
     B --> |Être accompagné| A
-    B --> |Réussir| C[Objectifs de formation]
+    B --> |Réussir| C
     C --> |Être corrigé| B
+    C --> |Démarche réfléxive| B
+    D>Variables Didactiques] --> |Ajustement du niveau de complexité| B
+```
+
+## Zone proximale de développement
+
+`zone de confort` -> `zone d'apprentissage` -> `Zone d'inconfort` -> `Zone de panique`
+
+* On vise la **zone d'apprentissage**
+
+* De temps en temps on peut revenir en **zone de confort** pour donner confiance
+
+* Certains apprenants ont besoin d'être poussés ponctuellement en **zone d'inconfort**
+
+* Lorsqu'on pense être en **Zone de panique** il est nécessaire d'en discuter avec le formateur.
+
+```mermaid
+pie title Zone proximale de développement
+    "zone de confort" : 10
+    "zone d'apprentissage" : 55
+    "Zone d'inconfort" : 30
+    "Zone de panique": 5
 ```
 
 ## Principe de *Compétence*
@@ -72,7 +95,7 @@ elles sont déterminées par le formateur (et pas laissée aux choix pour les ap
 
 > Attention à bien partir d'une `Situation emblématique` et des `Compétences du référentiel` pour couvrir toutes les compétences.
 
-## montée en compétences
+## %ontée en compétences
 
 Les `variables didactiques` permettent d'augmenter la complexité.
 
@@ -85,20 +108,10 @@ Les `variables didactiques` permettent d'augmenter la complexité.
 Objectif: tous niveau 3 pour être certifié, **Critère du REAC = Niveau 3**
 
 
-## ZPD: Zone proximale de développement
-
-`zone de confort` -> `zone d'apprentissage` -> `Zone d'inconfort` -> `Zone de panique`
-
-* On vise la **zone d'apprentissage**
-
-* De temps en temps on peut revenir en **zone de confort** pour donner confiance
-
-* Certains apprenants ont besoin d'être poussés ponctuellement en **zone d'inconfort**
-
 
 ## Principe d'analyses réflexives
 
-1. Réfléchissement : Identifier gestes, actions, faiblesses, part exemple et se projeter éventuellement dans une action future, actuelle ou passée.
+1. Réfléchissement : Identifier gestes, actions, faiblesses et se projeter éventuellement dans une action future, actuelle ou passée.
 
 2. Analyse réflexive : Vérifier le niveau de compréhension
 

@@ -22,6 +22,73 @@ Usable offline with a simple text editor, its purpose is to freely share knowled
 * [Forensic](https://github.com/Aif4thah/Dojo-101/tree/main/Dojo-101-Forensic)
 * [Radio frequencies](https://github.com/Aif4thah/Dojo-101/tree/main/Dojo-101-RF)
 
+
+```mermaid
+mindmap
+  root((DOJO-101))
+    Training
+        Lab
+        Situation
+        Wargame
+    
+    DevSec
+        Crypto
+        Github
+        IA ML
+        SAST
+        DAST
+        STRIDE
+        API
+        Python
+        .NET
+        JS
+        Rust
+
+    SecOps
+        Awareness
+        Hardening
+        Windows
+        AD
+        Linux
+        Azure
+        Docker
+        Ansible
+        Powershell
+        Firewall
+        VPN
+        PKI
+        PGP
+        Network
+    RF
+        TEMPEST
+        SIGINT
+        Wifi
+        RFID
+        Bluetooth
+        Jamming
+        HackRF
+
+    Pentest
+        RECON
+            OSINT
+            Scanning
+        EXPLOIT
+            Metasploit
+            BoF
+            MITM
+            Payloads
+            Reverseshell
+        POST EXPOIT
+            Pivot
+            PrivEsc
+            InfoStealer
+
+    Forensic
+        Artifacts
+        Reverse
+        SIEM
+```
+
 ## 👉 Let’s get started!
 
 README Files and those containing the keyword `basics` contain elements that are subsequently considered prerequisites. Here are some suggestions:
