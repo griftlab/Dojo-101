@@ -106,12 +106,16 @@ README Files and those containing the keyword `basics` contain elements that are
 
 ## 📒 You need almost nothing.
 
-* `git clone https://github.com/Aif4thah/Dojo-101.git`
+Clone the repository without the history using the following command:
 
-* Open `DOJO-101` folder with [VSCode](https://code.visualstudio.com/) then,
+```sh
+ `git clone --depth 1 https://github.com/Aif4thah/Dojo-101`
+```
 
-    * Search by keyword across all files (e.g., `basics`, `Windows`, `Linux`)
-    * Read the content in `HTML` format (`ctrl`+`shift` +`V`)
+Open `DOJO-101` folder with [VSCode](https://code.visualstudio.com/) then,
+
+* Search by keyword across all files (e.g., `basics`, `Windows`, `Linux`)
+* Read the content in `HTML` format (`ctrl`+`shift` +`V`)
 
 ## 🤝 Contributions
 
