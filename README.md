@@ -25,13 +25,13 @@ Usable offline with a simple text editor, its purpose is to freely share knowled
 
 ```mermaid
 mindmap
-  root((DOJO-101))
-    Training
+  root((**DOJO-101**))
+    **Training**
         Lab
         Situation
         Wargame
     
-    DevSec
+    **DevSec**
         Crypto
         Github
         IA ML
@@ -44,7 +44,7 @@ mindmap
         JS
         Rust
 
-    SecOps
+    **SecOps**
         Awareness
         Hardening
         Windows
@@ -59,7 +59,10 @@ mindmap
         PKI
         PGP
         Network
-    RF
+
+    **RF**
+        SDR
+        DSP
         TEMPEST
         SIGINT
         Wifi
@@ -68,24 +71,23 @@ mindmap
         Jamming
         HackRF
 
-    Pentest
-        RECON
-            OSINT
-            Scanning
-        EXPLOIT
-            Metasploit
-            BoF
-            MITM
-            Payloads
-            Reverseshell
-        POST EXPOIT
-            Pivot
-            PrivEsc
-            InfoStealer
+    **Pentest**
+        OSINT
+        Scanning
+        Metasploit
+        BoF
+        MITM
+        Payloads
+        Reverseshell
+        Pivot
+        PrivEsc
 
-    Forensic
-        Artifacts
+    **Forensic**
+        Acquisition
+        Duplication
+        Memory
         Reverse
+        Logs
         SIEM
 ```
 

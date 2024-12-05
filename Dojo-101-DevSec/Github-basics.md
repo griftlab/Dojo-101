@@ -228,5 +228,3 @@ steps:
 ## Scan des secrets
 
 * defaut : A activer dans les options `security` -> `Secret scanning` et `push protection`
-
-* [Gitleaks](https://github.com/gitleaks/gitleaks) : dans le repartoire du `.git` via la commande `gitleaks detect -v`
