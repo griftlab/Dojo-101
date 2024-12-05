@@ -106,19 +106,12 @@ README Files and those containing the keyword `basics` contain elements that are
 
 ## 📒 You need almost nothing.
 
-1. `git clone https://github.com/Aif4thah/Dojo-101.git`
+* `git clone https://github.com/Aif4thah/Dojo-101.git`
 
-2. The content is regularly updated, so remember to do a `git pull` before using it.
-
-3. As an example, open `DOJO-101` folder with [VSCode](https://code.visualstudio.com/) then,
+* Open `DOJO-101` folder with [VSCode](https://code.visualstudio.com/) then,
 
     * Search by keyword across all files (e.g., `basics`, `Windows`, `Linux`)
     * Read the content in `HTML` format (`ctrl`+`shift` +`V`)
-
-<p align="center">
-    <img src="./images/VSCode-demo.gif" alt="Dojo-101-vscodium" style="width: 800px;" />
-</p>
-
 
 ## 🤝 Contributions
 
