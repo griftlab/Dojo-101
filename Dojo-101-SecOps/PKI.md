@@ -20,6 +20,8 @@
 
 * HSM: Un Hardware Security Module ou HSM est un matériel électronique offrant un service de sécurité qui consiste à générer, stocker et protéger des clefs cryptographiques.
 
+* CSR: Certificate Signing Request, utilisée pour demander un certificat auprès d'une autorité de certification (CA). 
+
 ## Points à prendre en compte pour la sécurité
 
 * La durée de validité des certificats et les algorithmes de chiffrements choisis.
@@ -35,9 +37,9 @@
 
 ## Revocation et vérification de validité
 
-* CRL (Ceritifcate Revocation list)
+* CRL :Ceritifcate Revocation list
 
-* requêtes OCSP
+* OCSP : Online Certificate Status Protocol
 
 
 ## Emplacements des certificats

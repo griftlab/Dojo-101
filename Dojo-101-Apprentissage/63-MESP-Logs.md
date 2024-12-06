@@ -14,7 +14,7 @@ durée: 2 jour
 
 ## Contexte
 
-Afin de préparer l'arrivée du SIEM vous êtes chargé de mettre en place un puits de logs. 
+Afin de préparer l'arrivée du SIEM dans l'entreprise vous êtes chargé de mettre en place un puits de logs. 
 Vous êtes libre quant au choix de la technologie.
 
 1. S'assurer que tous les événements importants pour la sécurité figurent dans les logs (succès et erreur d'authentification, escalade de privilèges, accès aux dossiers sensibles, etc.)

@@ -34,6 +34,17 @@ flowchart TD
     D>Variables Didactiques] --> |Ajustement du niveau de complexité| B
 ```
 
+### En distanciel
+
+Pour que l'apprentissage en distanciel fonctionne, il faut : 
+
+* Participer
+* Rester concentré (pas de distraction)
+* Faire appel au formateur si on n’arrive pas à trouver de solution (après avoir cherché par soi-même)
+* Mettre la caméra lors des moments d'échange
+* Prendre des pauses (si possible sans écran)
+
+
 ## Zone proximale de développement
 
 `zone de confort` -> `zone d'apprentissage` -> `Zone d'inconfort` -> `Zone de panique`
@@ -106,7 +117,6 @@ Les `variables didactiques` permettent d'augmenter la complexité.
 3. transposer
 
 Objectif: tous niveau 3 pour être certifié, **Critère du REAC = Niveau 3**
-
 
 
 ## Principe d'analyses réflexives
