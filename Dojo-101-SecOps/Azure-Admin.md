@@ -1,29 +1,80 @@
 # Administration Azure
 
-## Managed Disks:
+## Calucl des couts
 
-Types of disks:
+[Calculator](https://azure.microsoft.com/fr-fr/pricing/calculator/)
 
-* OS disk: When you create an Azure VM, Azure automatically attaches a VHD for the operating system (OS).
+> penser aux spending limits
 
-* Temporary disk: When you create an Azure VM, Azure also automatically adds a temporary disk. This disk is used for data, such as page and swap files. The data on this disk may be lost during maintenance or a VM redeploy. Don't use it for storing permanent data, such as database files or transaction logs.
+## Users
 
-* Data disks: A data disk is a VHD that's attached to a virtual machine to store application data or other data you need to keep.
+[liste des rôles](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles)
+
+```powershell
+# Créer un utilisateur
+New-AzADUser -DisplayName "NouvelUtilisateur" -UserPrincipalName "nouvelutilisateur@domain.com" -Password "Redacted"
+
+# Créer un groupe de ressources
+New-AzResourceGroup -Name "ExempleGroupe" -Location "WestUS"
+
+# Accorder les permissions
+New-AzRoleAssignment -ObjectId (Get-AzADUser -UserPrincipalName "nouvelutilisateur@domain.com").Id -RoleDefinitionName "Contributor" -Scope "/subscriptions/IDDeVotreAbonnement/resourceGroups/ExempleGroupe"
+```
 
 
 ## NSG:
 
 NSGs use rules to allow or deny traffic moving through the network. 
 
-Each rule identifies the source and destination address (or range), protocol, port (or range), 
-direction (inbound or outbound), a numeric priority, and whether to allow or deny the traffic that matches the rule.
+```mermaid
+flowchart TD
+    A(Internet) -->|NSG1| B(Vnet1)
+    B --> |NSG2| C(Vnet2)
+```
 
-The rules are evaluated in priority order, starting with the lowest priority rule. 
-Deny rules always stop the evaluation. 
-For example, if a network interface rule blocks an outbound request, any rules applied to the subnet will not be checked. 
-For traffic to be allowed through the security group, it must pass through all applied groups.
+* peut être attribué à un Subnet
+* peut être attribué à une NIC (plus sûr)
+* Les règles sont traitées par n° (comme un firewall), le plus faible est prioritaire
 
 ```powershell
+Get-AzNetworkSecurityGroup | format-table Name, Location, ResourceGroupName, ProvisioningState, ResourceGuid
+```
+
+1. Une fois les `VM` créés, et `Networking` configuré, aller dans `Network Security Groups`
+
+2. Créer et sélectionner le `ressourceGroup` de notre VM
+
+3. Dans notre `NSG` sélectionner `Network Interface` et associer la `NIC` de notre VM
+
+4. Dans `Virtual Machine` -> `Networking` -> `Add Inbound rule` et ajouter le port autorisé
+
+
+
+## Créer une VM
+
+
+```sh
+az vm create \
+--resource-group learn-f95b0f1e-6792-468f-bd1d-88a0391c03a3 \
+--location westus \
+--name SampleVM \
+--image UbuntuLTS \
+--admin-username azureuser \
+--generate-ssh-keys \
+--verbose 
+
+az vm stop \
+--name SampleVM \
+--resource-group learn-f95b0f1e-6792-468f-bd1d-88a0391c03a3
+
+az vm image list --output table
+```
+
+
+## Ouvrir un port
+
+
+```sh
 az vm open-port \
 --port 80 \
 --resource-group learn-f95b0f1e-6792-468f-bd1d-88a0391c03a3 \
@@ -32,7 +83,7 @@ az vm open-port \
 
 ## VM Sizing:
 
-```powershell
+```sh
 az vm list --output table
 
 az vm list-ip-addresses -n SampleVM -o table
@@ -52,25 +103,6 @@ az vm resize \
 --size Standard_D2s_v3
 ```
 
-## AZ CLI:
-
-```powershell
-
-az vm create \
---resource-group learn-f95b0f1e-6792-468f-bd1d-88a0391c03a3 \
---location westus \
---name SampleVM \
---image UbuntuLTS \
---admin-username azureuser \
---generate-ssh-keys \
---verbose 
-
-az vm stop \
---name SampleVM \
---resource-group learn-f95b0f1e-6792-468f-bd1d-88a0391c03a3
-
-az vm image list --output table
-```
 
 
 ## Create a resource group:
@@ -216,6 +248,16 @@ az deployment group create \
 --parameters adminPassword=$PASSWORD \
 --parameters dnsLabelPrefix=$DNS_LABEL_PREFIX
 
+
+## Managed Disks:
+
+Types of disks:
+
+* OS disk: When you create an Azure VM, Azure automatically attaches a VHD for the operating system (OS).
+
+* Temporary disk: When you create an Azure VM, Azure also automatically adds a temporary disk. This disk is used for data, such as page and swap files. The data on this disk may be lost during maintenance or a VM redeploy. Don't use it for storing permanent data, such as database files or transaction logs.
+
+* Data disks: A data disk is a VHD that's attached to a virtual machine to store application data or other data you need to keep.
 
 ### VHD Files:
 

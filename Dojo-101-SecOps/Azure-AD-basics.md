@@ -2,7 +2,9 @@
 
 ## Accès
 
-* [Portal](https://azure.microsoft.com/fr-fr/get-started/azure-portal/)
+* [Portal](https://portal.azure.com/#home)
+
+* [Cloud Shell](https://portal.azure.com/#cloudshell/)
 
 * [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
 
